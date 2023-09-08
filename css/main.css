@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #F8E5F6;
+    height: 100%;
+}
+
+.container{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 35em;
+    margin-top: 5%;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+}
+
+
+
+.start > img{
+    width: 20em;
+}
+.info > img{
+    width: 20em;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 720px){
+
+    .logo{
+        width: 30em;
+    }
+
+}
+@media screen and (max-width: 540px){
+
+    .logo{
+        width: 30em;
+    }
+
+    button{
+
+    }
+
+}
