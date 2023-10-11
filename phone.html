@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/phone.css">
     <link rel="stylesheet" href="css/all.css">
 
 </head>
 <body>
 
-    <button onclick="phone()">phone</button>
+    <button onclick="phone()"><img src="images/phone.png" alt="" width="400px"></button>
 
 
     <script>
 
         function phone(){
 
-            window.open('p.html', 'phone', 'width=400 height=600');
+            var popupX = (window.screen.width / 2) - (400 / 2);
+            var popupY= (window.screen.height /2) - (600 / 2);
+            window.open('p.html', 'phone', 'status=no, height=600, width=400, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
 
 
         }
