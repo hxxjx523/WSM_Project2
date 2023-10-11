@@ -2,6 +2,14 @@ html{
     cursor: url(../images/feather.png), auto;
 }
 
+body{
+    font-family: 'neodgm';
+}
 button{
     cursor: url(../images/feather2.png), auto;
+}
+
+@font-face {
+    font-family: 'neodgm';
+    src: url(../fonts/neodgm.woff) format('opentype');
 }
