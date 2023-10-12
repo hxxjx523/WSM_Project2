@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'neodgm';
+    src: url(../fonts/neodgm.woff) format('opentype');
+}
+
 html{
     cursor: url(../images/feather.png), auto;
 }
@@ -9,7 +14,4 @@ button{
     cursor: url(../images/feather2.png), auto;
 }
 
-@font-face {
-    font-family: 'neodgm';
-    src: url(../fonts/neodgm.woff) format('opentype');
-}
+
