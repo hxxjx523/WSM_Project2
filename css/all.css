@@ -12,6 +12,9 @@ body{
 }
 button{
     cursor: url(../images/feather2.png), auto;
+    background-color: transparent;
+    border: 0;
+    
 }
 
 
