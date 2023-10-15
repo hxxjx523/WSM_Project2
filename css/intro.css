@@ -8,14 +8,10 @@ html, body{
 
 }
 
+
 img{
     width: 100%;
     height: 100%;
 
 }
 
-.icon{
-    color: black;
-    position: fixed;
-    width: 100px;
-}
