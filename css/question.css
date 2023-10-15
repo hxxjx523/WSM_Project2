@@ -6,3 +6,6 @@ body{
     margin-top: 1em;
 }
 
+input[type="checkbox" i] {
+    cursor: url(../images/feather.png), auto;
+}

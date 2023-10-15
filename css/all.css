@@ -9,11 +9,14 @@ html{
 
 body{
     font-family: 'neodgm';
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 button{
     cursor: url(../images/feather2.png), auto;
     background-color: transparent;
     border: 0;
 }
-
 
