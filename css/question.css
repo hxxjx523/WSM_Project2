@@ -4,8 +4,12 @@ body{
     align-items: center;
     justify-content: center;
     margin-top: 1em;
+    background-color: hotpink;
 }
 
-input[type="checkbox" i] {
+input[type="checkbox"] {
     cursor: url(../images/feather.png), auto;
+    position: relative;
+    top: 2em;
 }
+
