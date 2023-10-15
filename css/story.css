@@ -1,14 +1,29 @@
 body{
     background-color: hotpink;
+}
+
+.container{
     position: absolute;
 }
+
 .dialogueWindow{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: pink;
-    vertical-align: bottom;
-    width: 15em;
-    height: 18em;
+    width: 90vw;
+    height: 15em;
+    opacity: 0.5;
+    margin: auto 4%;
     position: relative;
+    z-index: 2;
+}
+
+.nameWindow{
+    background-color: aliceblue;
+    margin: auto 4%;
+    width: 180px;
+    height: 4em;
+    position: relative;
+    z-index: 3;
 }
