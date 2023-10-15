@@ -1,0 +1,14 @@
+body{
+    background-color: hotpink;
+    position: absolute;
+}
+.dialogueWindow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+    vertical-align: bottom;
+    width: 15em;
+    height: 18em;
+    position: relative;
+}
