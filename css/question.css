@@ -1,15 +1,46 @@
 
 body{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em; */
+    background-color: hotpink;
+}
+
+.container{
+    position: absolute;
+    bottom: 0;
+}
+
+.dialogueWindow{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1em;
-    background-color: hotpink;
+    background-color: pink;
+    font-size: 1.5rem;
+    width: 90vw;
+    height: 10em;
+    margin: auto 5%;
+    position: relative;
+    z-index: 2;
+}
+
+.nameWindow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: aliceblue;
+    margin: auto 5%;
+    width: 200px;
+    height: 3em;
+    position: relative;
+    z-index: 3;
 }
 
 input[type="checkbox"] {
     cursor: url(../images/feather.png), auto;
     position: relative;
-    top: 2em;
+    /* top: 2em; */
 }
 
