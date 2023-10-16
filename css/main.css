@@ -20,6 +20,10 @@ body{
     padding-left: 6%;
 }
 
+.div{
+    height: 100%;
+}
+
 .logo{
     width: 35em;
     margin-top: 5%;
@@ -43,7 +47,7 @@ button{
 }
 
 .Title_kimyeojoo{
-    width: 30em;
+    width: 42%;
     float: right;
 }
 
