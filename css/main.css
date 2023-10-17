@@ -17,15 +17,15 @@ body{
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
-    padding-left: 6%;
 }
 
 .div{
     height: 100%;
+    align-items: center;
 }
 
 .logo{
-    width: 35em;
+    width: 43vw;
     margin-top: 5%;
 }
 
