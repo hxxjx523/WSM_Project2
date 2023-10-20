@@ -10,42 +10,38 @@
 </head>
 <body>
     
-    <!-- <div class="container">
+    <div class="container">
         <div class="nameWindow">
-            <div class="name">김여주</div>
+            <div class="name">민들레</div>
         </div>
         <div class="dialogueWindow">
             <div class="question">
                 <p id="q1"></p>
-                <div class="check" width="1px">
+                <!-- <div class="check" width="1px">
                     <input type="radio" name="question" class="select"><span id="a1"></span>
                     <br><br>
                     <input type="radio" name="question" class="select"><span id="a2"></span>
                     <br><br>
                     <input type="radio" name="question" class="select"><span id="a3"></span>
-                </div>
+                </div> -->
+                <label>
+                    <input type="radio" name="answer" value="a1" id="radioA1">
+                    <span id="a1"></span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="answer" value="a2" id="radioA2">
+                    <span id="a2"></span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="answer" value="a3" id="radioA3">
+                    <span id="a3"></span>
+                </label>
+                <br>
+                <button id="nextButton">다음</button>
             </div>
         </div>
-    </div> -->
-
-    <div id="container">
-        <p id="q1"></p>
-        <label>
-            <input type="radio" name="answer" value="a1" id="radioA1">
-            <span id="a1"></span>
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="answer" value="a2" id="radioA2">
-            <span id="a2"></span>
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="answer" value="a3" id="radioA3">
-            <span id="a3"></span>
-        </label>
-        <br>
-        <button id="nextButton">다음</button>
     </div>
 
     <script src="js/question.js"></script>
