@@ -12,12 +12,46 @@ let question2= {
     a3 : " 3. 용감한 사람"
 }
 
-const q1 = document.getElementById('q1');
-const a1 = document.getElementById('a1');
-const a2 = document.getElementById('a2');
-const a3 = document.getElementById('a3');
-q1.innerHTML = question1.q1;
-a1.innerHTML = question1.a1;
-a2.innerHTML = question1.a2;
-a3.innerHTML = question1.a3;
-console.log(question1);
+// const keys = ['q1', 'a1', 'a2', 'a3'];
+
+// for (let key of keys) {
+//     const elem = document.getElementById(key);
+//     if (elem && question1.hasOwnProperty(key)) {
+//         elem.innerHTML = question1[key];
+//     }
+// }
+
+// console.log(question1);
+
+
+const questions = [question1, question2];
+const keys = ['q1', 'a1', 'a2', 'a3'];
+let currentQuestionIndex = 0;
+
+function displayQuestion(question) {
+    for (let key of keys) {
+        const elem = document.getElementById(key);
+        if (elem && question.hasOwnProperty(key)) {
+            elem.innerHTML = question[key];
+        }
+    }
+}
+
+document.getElementById("nextButton").addEventListener("click", function() {
+    // 선택된 radio button이 있는지 확인
+    if (document.querySelector('input[name="answer"]:checked')) {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            displayQuestion(questions[currentQuestionIndex]);
+        } else {
+            // 모든 질문이 끝나면 다음 버튼을 비활성화 하거나 다른 액션을 취할 수 있습니다.
+            alert("모든 질문이 끝났습니다!");
+            document.getElementById("nextButton").disabled = true;
+        }
+    } else {
+        alert("답변을 선택해주세요.");
+    }
+});
+
+// 처음 시작할 때 question1을 출력
+displayQuestion(question1);
