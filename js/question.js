@@ -12,6 +12,13 @@ let question2= {
     a3 : " 3. 용감한 사람"
 }
 
+let question3= {
+    q1 : "Q. 당신이 배우고 싶은 것은?",
+    a1 : " 1. 운동",
+    a2 : " 2. 예술",
+    a3 : " 3. 음악"
+}
+
 // const keys = ['q1', 'a1', 'a2', 'a3'];
 
 // for (let key of keys) {
@@ -24,7 +31,7 @@ let question2= {
 // console.log(question1);
 
 
-const questions = [question1, question2];
+const questions = [question1, question2, question3];
 const keys = ['q1', 'a1', 'a2', 'a3'];
 let currentQuestionIndex = 0;
 

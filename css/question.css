@@ -44,3 +44,7 @@ input[type="radio"] {
     /* top: 2em; */
 }
 
+.question > button {
+    float: right;
+}
+
