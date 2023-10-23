@@ -3,7 +3,7 @@
     src: url(../fonts/neodgm.woff) format('opentype');
 }
 
-html{
+*{
     cursor: url(../images/feather.png), auto;
 }
 
@@ -16,8 +16,14 @@ body{
 }
 
 button{
-    cursor: url(../images/feather2.png), auto;
     background-color: transparent;
     border: 0;
+    cursor: url(../images/feather2.png), auto;
+    position: relative;
+}
+
+input[type="radio"]{
+    cursor: url(../images/feather2.png), auto;
+    position: relative;
 }
 

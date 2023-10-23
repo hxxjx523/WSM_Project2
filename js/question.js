@@ -46,6 +46,7 @@ function displayQuestion(question) {
 
 document.getElementById("nextButton").addEventListener("click", function() {
     let radio = document.querySelector('input[name="answer"]:checked');
+
     if (radio) {
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
@@ -57,7 +58,7 @@ document.getElementById("nextButton").addEventListener("click", function() {
     } else {
         alert("답변을 선택해주세요");
     }
-    radio.checked = false;
+    radio.checked = 0;
 });
 
 displayQuestion(question1);
