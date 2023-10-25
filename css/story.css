@@ -18,6 +18,7 @@ body{
     margin: auto 5%;
     position: relative;
     z-index: 2;
+    flex-direction: column;
 }
 
 .nameWindow{
@@ -31,4 +32,13 @@ body{
     height: 3em;
     position: relative;
     z-index: 3;
+}
+
+.button {
+    width: 100%;
+    align-items: baseline;
+}
+
+.button > button {
+    float: right;
 }
