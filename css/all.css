@@ -5,10 +5,10 @@
 
 *{
     cursor: url(../images/feather.png), auto;
+    font-family: 'neodgm';
 }
 
 body{
-    font-family: 'neodgm';
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -26,4 +26,3 @@ input[type="radio"]{
     cursor: url(../images/feather2.png), auto;
     position: relative;
 }
-
