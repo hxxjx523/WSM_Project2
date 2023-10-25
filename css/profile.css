@@ -1,11 +1,10 @@
 body{
-    background-image: url(../images/profile_Doyoon.png);
     background-size: cover;
 }
 
 .profile{
     font-size: 1.8rem;
-    margin: 0.4em 0em 0em 8em;
+    margin: 0.4em 0em 0em 6em;
 }
 
 .pnBtn {

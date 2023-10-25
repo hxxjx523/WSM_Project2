@@ -45,20 +45,20 @@ function displayQuestion(question) {
 }
 
 document.getElementById("nextButton").addEventListener("click", function() {
-    // 선택된 radio button이 있는지 확인
-    if (document.querySelector('input[name="answer"]:checked')) {
+    let radio = document.querySelector('input[name="answer"]:checked');
+
+    if (radio) {
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
             displayQuestion(questions[currentQuestionIndex]);
         } else {
-            // 모든 질문이 끝나면 다음 버튼을 비활성화 하거나 다른 액션을 취할 수 있습니다.
-            alert("모든 질문이 끝났습니다!");
+            alert("모든 질문 완료");
             document.getElementById("nextButton").disabled = true;
         }
     } else {
-        alert("답변을 선택해주세요.");
+        alert("답변을 선택해주세요");
     }
+    radio.checked = 0;
 });
 
-// 처음 시작할 때 question1을 출력
 displayQuestion(question1);

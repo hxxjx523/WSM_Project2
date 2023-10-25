@@ -1,3 +1,16 @@
-.homeBtn {
+.homeBtn{
     float: right;
+}
+
+.container{
+    background-color: rgb(236, 237, 255);
+}
+
+
+button{
+    font-size: 1.2rem;
+}
+
+.name{
+    margin: 8px 5px;
 }

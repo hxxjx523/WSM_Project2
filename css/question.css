@@ -49,13 +49,19 @@ body{
     z-index: 3;
 }
 
-input[type="radio"] {
-    cursor: url(../images/feather.png), auto;
-    position: relative;
-    /* top: 2em; */
-}
 
 .question > button {
     float: right;
+}
+
+
+.imgMindeulre{
+    align-items: center;
+    width: 20em;
+    height: auto;
+    display: block; 
+    margin: 0px auto;
+    position: relative;
+    z-index: 1;
 }
 
