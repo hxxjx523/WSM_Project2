@@ -10,6 +10,17 @@ body{
 .container{
     position: absolute;
     bottom: 0;
+
+}
+
+.character{
+
+   text-align: center;
+}
+
+.민들레{
+    width: 30%;
+    z-index: 1;
 }
 
 .dialogueWindow{
