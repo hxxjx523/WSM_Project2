@@ -7,6 +7,12 @@ body{
     bottom: 0;
 }
 
+.imgCharacter{
+    width: 30%;
+    z-index: 1;
+    position: relative;
+}
+
 .dialogueWindow{
     display: flex;
     align-items: center;
