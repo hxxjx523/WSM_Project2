@@ -10,3 +10,11 @@ body{
 .pnBtn {
     float: right;
 }
+
+button{
+    font-size: 1.2rem;
+}
+
+.detailProfile{
+    font-size: 1.35rem;
+}
