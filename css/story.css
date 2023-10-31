@@ -6,11 +6,16 @@ body{
     position: absolute;
     bottom: 0;
 }
+.character{
+    max-height: 350px;
+    overflow: hidden;
+    margin-bottom: -80px;
+    position: relative;
+    z-index: 1;
+}
 
 .imgCharacter{
     width: 30%;
-    z-index: 1;
-    position: relative;
 }
 
 .dialogueWindow{
@@ -49,4 +54,9 @@ body{
 
 .button > button {
     float: right;
+}
+
+.character{
+    text-align: right;
+
 }
