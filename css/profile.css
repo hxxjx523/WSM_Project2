@@ -18,3 +18,9 @@ button{
 .detailProfile{
     font-size: 1.35rem;
 }
+
+.explain{
+    border: 0.1em solid black;
+    width: 5em;
+    height: 5em;
+}
