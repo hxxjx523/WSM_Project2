@@ -7,10 +7,10 @@ const dialogues = [
 
 let currentDialogueIndex = 0;
 
-// HTML 요소 참조 가져오기
+// HTML 요소 참조 가져오기y
 const nameElement = document.querySelector('.name');
 const dialogueElement = document.querySelector('.dialogue');
-const characterElement = document.querySelector('.character img');
+const characterElement = document.querySelector('.imgCharcter');
 const nextButton = document.getElementById('nextButton');
 
 // 대사와 캐릭터 이미지를 화면에 표시하는 함수
@@ -33,7 +33,7 @@ nextButton.addEventListener('click', () => {
     displayDialogue(currentDialogueIndex);
 });
 
-// 페이지가 로드되면 첫 번째 대사와 캐릭터 이미지를 표시
+// 페이지가 로드되면 첫 번째 대사와 캐릭터 이미지를표시
 window.addEventListener('DOMContentLoaded', () => {
     displayDialogue(currentDialogueIndex);
 });
