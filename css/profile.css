@@ -21,6 +21,17 @@ button{
 
 .explain{
     border: 0.1em solid black;
-    width: 5em;
-    height: 5em;
+    width: 12em;
+    height: 14em;
+    margin-top: 0.8em;
+    margin-left: -72%;
+    padding: 3% 3% 3% 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.explainTxt{
+    font-size: 1rem;
 }
