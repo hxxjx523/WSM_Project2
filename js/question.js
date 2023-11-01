@@ -78,6 +78,7 @@ const questions = [question1, question2, question3];
 
 const keys = ['q1', 'a1', 'a2', 'a3'];
 let cnt = 0;
+
         let currentQuestionIndex = 0;
         let accumulatedValue = 0;
 
@@ -88,11 +89,11 @@ let cnt = 0;
                     elem.innerHTML = question[key];
                 }
             }
+            
         }
 
         document.getElementById("nextButton").addEventListener("click", function() {
             let radio = document.querySelector('input[name="answer"]:checked');
-            let cnt = (radio.value.split(""))[1]; //답변 순서 카운트
             if (radio) {
                 const selectedValue = parseInt(radio.value.substr(1)); // "a1" -> 1, "a2" -> 2, "a3" -> 3
                 accumulatedValue += selectedValue;
@@ -106,7 +107,6 @@ let cnt = 0;
                     alert("모든 질문 완료");
                     document.getElementById("nextButton").disabled = true;
                 }
-
                 radio.checked = false;
             } else {
                 alert("답변을 선택해주세요");
@@ -114,3 +114,4 @@ let cnt = 0;
         });
 
         displayQuestion(questions[currentQuestionIndex]);
+        
