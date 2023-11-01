@@ -19,18 +19,6 @@ let question3= {
     a3 : " 3. 음악"
 }
 
-// const keys = ['q1', 'a1', 'a2', 'a3'];
-
-// for (let key of keys) {
-//     const elem = document.getElementById(key);
-//     if (elem && question1.hasOwnProperty(key)) {
-//         elem.innerHTML = question1[key];
-//     }
-// }
-
-// console.log(question1);
-
-
 const questions = [question1, question2, question3];
 const keys = ['q1', 'a1', 'a2', 'a3'];
 let currentQuestionIndex = 0;
@@ -62,3 +50,18 @@ document.getElementById("nextButton").addEventListener("click", function() {
 });
 
 displayQuestion(question1);
+
+        const form = document.querySelector("#nextButton");
+        const accumulatedValueSpan = document.getElementById("accumulatedValue");
+        let accumulatedValue = 0;
+        let previousValue = 0;
+
+        // 라디오 버튼이 변경될 때 이벤트를 처리
+        form.addEventListener("change", function(event) {
+            const selectedRadio = document.querySelector('input[name="answer"]:checked');
+            if (selectedRadio) {
+                const selectedValue = parseInt(selectedRadio.value.substr(1)); // "a1" -> 1, "a2" -> 2, "a3" -> 3
+                accumulatedValue = previousValue + selectedValue;
+                accumulatedValueSpan.textContent = "누적된 값: " + accumulatedValue;
+            }
+        });
