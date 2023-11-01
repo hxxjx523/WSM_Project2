@@ -6,17 +6,6 @@ body{
     position: absolute;
     bottom: 0;
 }
-.character{
-    max-height: 40vw;
-    overflow: hidden;
-    margin-bottom: -200px;
-    position: relative;
-    z-index: 1;
-}
-
-.imgCharacter{
-    width: 30%;
-}
 
 .dialogueWindow{
     display: flex;
@@ -55,8 +44,16 @@ body{
 .button > button {
     float: right;
 }
-
 .character{
-    text-align: right;
+    max-height: 40vw;
+    overflow: hidden;
+    margin-bottom: -200px;
+    position: relative;
+    z-index: 1;
 
+}
+
+.imgCharacter{
+    width: 30%;
+    float: right;
 }
