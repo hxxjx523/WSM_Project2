@@ -1,5 +1,5 @@
 const dialogues = [
-    { name: "김여주", text: "오늘은 고등학교 입학식이다. 왜인지 상쾌한 기분! 좋은 일이 있을 것만 같다", img: "images/김여주 전신.png" },
+    { name: "?", text: "오늘은 고등학교 입학식이다. 왜인지 상쾌한 기분! 좋은 일이 있을 것만 같다", img: "images/김여주 전신.png" },
     { name: "김여주", text: "콰당!.", img: "images/김여주 전신.png" },
     { name: " ", text: "하늘에서 떨어지는 정체를 알 수 없는 물체와 여주가 부딪혔다.", img: ""},
     { name: "김여주", text: "으으... 이게 뭐야!.", img: "images/김여주 전신.png"},

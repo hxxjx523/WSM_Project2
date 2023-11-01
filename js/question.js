@@ -77,6 +77,7 @@ const questions = [question1, question2, question3];
 //         });
 
 const keys = ['q1', 'a1', 'a2', 'a3'];
+let cnt = 0;
         let currentQuestionIndex = 0;
         let accumulatedValue = 0;
 
@@ -91,7 +92,7 @@ const keys = ['q1', 'a1', 'a2', 'a3'];
 
         document.getElementById("nextButton").addEventListener("click", function() {
             let radio = document.querySelector('input[name="answer"]:checked');
-
+            let cnt = (radio.value.split(""))[1]; //답변 순서 카운트
             if (radio) {
                 const selectedValue = parseInt(radio.value.substr(1)); // "a1" -> 1, "a2" -> 2, "a3" -> 3
                 accumulatedValue += selectedValue;
