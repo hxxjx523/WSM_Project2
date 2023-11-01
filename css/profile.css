@@ -18,3 +18,20 @@ button{
 .detailProfile{
     font-size: 1.35rem;
 }
+
+.explain{
+    border: 0.1em solid black;
+    width: 12em;
+    height: 14em;
+    margin-top: 0.8em;
+    margin-left: -5.6em;
+    padding: 3% 3% 3% 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.explainTxt{
+    font-size: 1rem;
+}

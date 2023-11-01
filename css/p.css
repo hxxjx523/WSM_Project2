@@ -1,4 +1,7 @@
 body{
     background-image: url(../images/phoneWallpaper.png);
     background-size: cover;
+    width: 400px; 
+    height: 600px; 
+    overflow: hidden; 
 }
