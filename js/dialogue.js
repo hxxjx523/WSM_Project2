@@ -19,6 +19,10 @@ const dialogues = [
     // ... 추가적인 대사와 이미지를 여기에 추가하십시오.
 ];
 
+const backgroundImg = [
+    "images/등굣길 배경.png"
+];
+
 let currentDialogueIndex = 0;
 
         const nameElement = document.querySelector('.name');
@@ -27,6 +31,7 @@ let currentDialogueIndex = 0;
         const nextButton = document.getElementById('nextButton');
 
         function displayDialogue(index) {
+            document.body.style.backgroundImage = `url('${backgroundImg[0]}')`;
             if (index >= dialogues.length) {
                 nextButton.disabled = true;
                 return;
