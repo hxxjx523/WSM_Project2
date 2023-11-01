@@ -1,3 +1,3 @@
 window.onresize = function() {
-    window.resizeTo(400, 600); 
+    window.resizeTo(420, 670); 
 };

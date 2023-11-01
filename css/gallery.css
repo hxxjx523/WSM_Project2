@@ -10,3 +10,8 @@ button{
 .nextButton{
     font-size: 2rem;
 }
+
+.homeBtn{
+    float: right;
+    margin-top: 0.6em;
+}
