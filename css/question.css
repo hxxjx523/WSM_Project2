@@ -1,21 +1,25 @@
 
 body{
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1em; */
+    width: 100vh;
     background-color: hotpink;
 }
 
 .container{
+    /* display: flex; */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
     position: absolute;
     bottom: 0;
-
 }
 
 .character{
-
-   text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    margin-bottom: -200px;
 }
 
 .imgMindeulre{
