@@ -20,64 +20,7 @@ let question3= {
 }
 
 const questions = [question1, question2, question3];
-// const keys = ['q1', 'a1', 'a2', 'a3'];
-// let currentQuestionIndex = 0;
-
-// function displayQuestion(question) {
-//     for (let key of keys) {
-//         const elem = document.getElementById(key);
-//         if (elem && question.hasOwnProperty(key)) {
-//             elem.innerHTML = question[key];
-//         }
-//     }
-// }
-
-// document.getElementById("nextButton").addEventListener("click", function() {
-//     let radio = document.querySelector('input[name="answer"]:checked');
-
-//     if (radio) {
-//         currentQuestionIndex++;
-//         if (currentQuestionIndex < questions.length) {
-//             displayQuestion(questions[currentQuestionIndex]);
-//         } else {
-//             alert("모든 질문 완료");
-//             document.getElementById("nextButton").disabled = true;
-//         }
-//     } else {
-//         alert("답변을 선택해주세요");
-//     }
-//     radio.checked = 0;
-// });
-
-// displayQuestion(question1);
-
-//         const form = document.querySelector(".question");
-//         const accumulatedValueSpan = document.getElementById("accumulatedValue");
-//         let accumulatedValue = 0;
-//         let previousValue = 0;
-
-//         form.addEventListener("change", function(event) {
-//             const selectedRadio = document.querySelector('input[name="answer"]:checked');
-//             if (selectedRadio) {
-//                 const selectedValue = parseInt(selectedRadio.value.substr(1)); // "a1" -> 1, "a2" -> 2, "a3" -> 3
-//                 accumulatedValue += selectedValue;
-//                 accumulatedValue -= previousValue;
-//                 accumulatedValueSpan.textContent = "누적된 값: " + accumulatedValue;
-//                 previousValue = selectedValue;
-//             }
-//         });
-
-//         // 다음 질문 버튼을 클릭했을 때, 현재 선택을 초기화
-//         const nextButton = document.getElementById("nextButton");
-//         nextButton.addEventListener("click", function() {
-//             const selectedRadio = document.querySelector('input[name="answer"]:checked');
-//             if (selectedRadio) {
-//                 selectedRadio.checked = false; // 선택 초기화
-//             }
-//         });
-
 const keys = ['q1', 'a1', 'a2', 'a3'];
-let cnt = 0;
 
         let currentQuestionIndex = 0;
         let accumulatedValue = 0;
@@ -99,13 +42,27 @@ let cnt = 0;
                 accumulatedValue += selectedValue;
                 const accumulatedValueSpan = document.getElementById("accumulatedValue");
                 console.log(accumulatedValue);
-                
+        
                 currentQuestionIndex++;
                 if (currentQuestionIndex < questions.length) {
                     displayQuestion(questions[currentQuestionIndex]);
                 } else {
                     alert("모든 질문 완료");
                     document.getElementById("nextButton").disabled = true;
+        
+                    let mainBoy;
+        
+                    if (accumulatedValue >= 3 && accumulatedValue <= 4) {
+                        mainBoy = "DoYoon";
+                    } else if (accumulatedValue >= 5 && accumulatedValue <= 7) {
+                        mainBoy = "Baekleehyun";
+                    } else if (accumulatedValue >= 8 && accumulatedValue <= 9) {
+                        mainBoy = "choijeayul";
+                    }
+        
+                    if (mainBoy) {
+                        console.log(mainBoy); 
+                    }
                 }
                 radio.checked = false;
             } else {
