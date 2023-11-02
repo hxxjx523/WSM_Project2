@@ -1,6 +1,11 @@
+// import { mainBoy } from './question.js';
+// console.log(mainBoy);
+
+// import { mainBoy } from "./question";
+
 const dialogues = [
     { name: "김여주", text: "오늘은 고등학교 입학식이다. 왜인지 상쾌한 기분! 좋은 일이 있을 것만 같다", img: "images/김여주 전신.png" },
-    { name: "김여주", text: "콰당!.", img: "images/김여주 전신.png" },
+    { name: "", text: "콰당!.", img: "" },
     { name: " ", text: "하늘에서 떨어지는 정체를 알 수 없는 물체와 여주가 부딪혔다.", img: ""},
     { name: "김여주", text: "으으... 이게 뭐야!.", img: "images/김여주 전신.png"},
     { name: " ", text: "여주는 정체를 알 수 없는 물체를 들어올렸다.", img: ""},
@@ -22,36 +27,75 @@ const backgroundImg = [
 ];
 
 let currentDialogueIndex = 0;
+let isImageVisible = true; // 변수 추가
+let isImageOnRight = true; // 변수 추가
 
-        const nameElement = document.querySelector('.name');
-        const dialogueElement = document.querySelector('.dialogue');
-        const characterImageElement = document.querySelector('.imgCharacter');
-        const nextButton = document.getElementById('nextButton');
+const nameElement = document.querySelector('.name');
+const dialogueElement = document.querySelector('.dialogue');
+const characterImageElement = document.querySelector('.imgCharacter');
+const nextButton = document.getElementById('nextButton');
+const nameWindow = document.querySelector('.nameWindow');
 
-        function displayDialogue(index) {
-            document.body.style.backgroundImage = `url('${backgroundImg[0]}')`;
-            if (index >= dialogues.length) {
-                nextButton.disabled = true;
-                return;
-            }
+// function displayDialogue(index) {
+//     document.body.style.backgroundImage = `url('${backgroundImg[0]}')`;
+//     if (index >= dialogues.length) {
+//         nextButton.disabled = true;
+//         return;
+//     }
+    
+//     const dialogue = dialogues[index];
+//     nameElement.textContent = dialogue.name;
+//     dialogueElement.textContent = dialogue.text;
+    
+//     if (dialogue.img) {
+//         characterImageElement.src = dialogue.img;
+//         characterImageElement.style.display = 'block';
+//     } else {
+//         characterImageElement.style.display = 'none';
+//     }
+// }
 
-            const dialogue = dialogues[index];
-            nameElement.textContent = dialogue.name;
-            dialogueElement.textContent = dialogue.text;
-
-            if (dialogue.img) {
-                characterImageElement.src = dialogue.img;
-                characterImageElement.style.display = 'block';
-            } else {
-                characterImageElement.style.display = 'none';
-            }
+function displayDialogue(index) {
+    document.body.style.backgroundImage = `url('${backgroundImg[0]}')`;
+    if (index >= dialogues.length) {
+        nextButton.disabled = true;
+        return;
+    }
+    
+    const dialogue = dialogues[index];
+    nameElement.textContent = dialogue.name;
+    dialogueElement.textContent = dialogue.text;
+    
+    if (dialogue.img) {
+        characterImageElement.src = dialogue.img;
+        // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
+        if (dialogue.img === 'images/김여주 전신.png') {
+            characterImageElement.style.float = 'right';
+            nameWindow.style.float = 'left';
+            characterImageElement.style.paddingRight = '10vh';
+            isImageOnRight = true;
+        } else if (dialogue.img === 'images/민들레.png') {
+            characterImageElement.style.float = 'left';
+            nameWindow.style.float = 'right';
+            characterImageElement.style.paddingLeft = '10vh';
+            isImageOnRight = false;
         }
+        characterImageElement.style.display = isImageVisible ? 'block' : 'none';
+    } else {
+        characterImageElement.style.display = 'none';
+    }
+}
 
-        nextButton.addEventListener('click', () => {
-            currentDialogueIndex++;
-            displayDialogue(currentDialogueIndex);
-        });
+nextButton.addEventListener('click', () => {
+    currentDialogueIndex++;
+    displayDialogue(currentDialogueIndex);
+    console.log(currentDialogueIndex)
+});
 
-        window.addEventListener('DOMContentLoaded', () => {
-            displayDialogue(currentDialogueIndex);
-        });
+window.addEventListener('DOMContentLoaded', () => {
+    displayDialogue(currentDialogueIndex);
+});
+
+if(currentDialogueIndex === 16){
+    window.location.href = mainBoy + "Route.html";
+}

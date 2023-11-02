@@ -34,7 +34,9 @@ const keys = ['q1', 'a1', 'a2', 'a3'];
             }
             
         }
-
+        
+        let mainBoy;
+        
         document.getElementById("nextButton").addEventListener("click", function() {
             let radio = document.querySelector('input[name="answer"]:checked');
             if (radio) {
@@ -42,16 +44,14 @@ const keys = ['q1', 'a1', 'a2', 'a3'];
                 accumulatedValue += selectedValue;
                 const accumulatedValueSpan = document.getElementById("accumulatedValue");
                 console.log(accumulatedValue);
-        
+                
                 currentQuestionIndex++;
                 if (currentQuestionIndex < questions.length) {
                     displayQuestion(questions[currentQuestionIndex]);
                 } else {
-                    alert("모든 질문 완료");
+                    swal("모든 질문 완료");
                     document.getElementById("nextButton").disabled = true;
-        
-                    let mainBoy;
-        
+                    
                     if (accumulatedValue >= 3 && accumulatedValue <= 4) {
                         mainBoy = "DoYoon";
                     } else if (accumulatedValue >= 5 && accumulatedValue <= 7) {
@@ -59,16 +59,23 @@ const keys = ['q1', 'a1', 'a2', 'a3'];
                     } else if (accumulatedValue >= 8 && accumulatedValue <= 9) {
                         mainBoy = "choijeayul";
                     }
-        
+                    
                     if (mainBoy) {
                         console.log(mainBoy); 
+                        // location.href = "story1.html";
+                        location.href = `${mainBoy}Route.html`;
                     }
                 }
                 radio.checked = false;
             } else {
-                alert("답변을 선택해주세요");
+                swal("답변을 선택해주세요");
             }
         });
-
+        
         displayQuestion(questions[currentQuestionIndex]);
+        if (mainBoy) {
+            console.log(mainBoy);
+            
+        }
+        // export { mainBoy }
         
