@@ -55,3 +55,9 @@
     width: 30%;
     float: right;
 }
+
+.phone{
+    width: 9em;
+    height: auto;
+    margin-top: 1.5em;
+}
