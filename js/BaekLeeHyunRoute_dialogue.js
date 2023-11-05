@@ -15,6 +15,15 @@ const dialogues = [
     { name: "백이현", text: "그렇구나, 1학년 교실은 저쪽이에요. 지금 뛰어가면 늦지는 않을 것 같은데?", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
 ];
 
+const select1_dialogues = [
+    { name: "", text: "나는 급하게 교실로 뛰어갔다", img: "", background: "images/학교 배경.png" },    
+];
+
+const select2_dialogues = [
+    { name: "백이현", text: "..그렇군요", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
+    { name: "", text: "나는 급하게 교실로 뛰어갔다", img: "", background: "images/학교 배경.png" },    
+];
+
 let currentDialogueIndex = 0;
 let isImageVisible = true; 
 let isImageOnRight = true; 
@@ -24,6 +33,9 @@ const dialogueElement = document.querySelector('.dialogue');
 const characterImageElement = document.querySelector('.imgCharacter');
 const nextButton = document.getElementById('nextButton');
 const nameWindow = document.querySelector('.nameWindow');
+const selectContainer = document.querySelector('.selectContainer');
+const select1 = document.querySelector('.select1');
+const select2 = document.querySelector('.select2');
 
 function displayDialogue(index) {
     if (index >= dialogues.length) {
@@ -42,7 +54,7 @@ function displayDialogue(index) {
     }
 
     dialogueElement.textContent = dialogue.text;
-
+    
     if (dialogue.img) {
         characterImageElement.src = dialogue.img;
         // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
@@ -61,7 +73,7 @@ function displayDialogue(index) {
     } else {
         characterImageElement.style.display = 'none';
     }
-
+    
     if (dialogue.background) {
         document.body.style.backgroundImage = `url('${dialogue.background}')`;
     } else {
@@ -69,8 +81,48 @@ function displayDialogue(index) {
     }
 }
 
+function yeojooChoise(){
+    
+    let likability = 0;
+    let currentSelect1Index = 0;
+
+    // if (index >= dialogues.length) {
+    //     nextButton.disabled = true;
+    //     return;
+    // }
+
+    const dialogue = select1_dialogues[0];
+    
+    select1.addEventListener('click', () => {
+        selectContainer.style.display = 'none';
+        likability++;
+        console.log(likability);
+        dialogueElement.textContent = dialogue.text;
+        if (dialogue.name === "" && dialogue.img === "") {
+            nameWindow.style.visibility = 'hidden';
+            characterImageElement.style.visibility = 'hidden';
+        }
+        
+    });
+    
+    const dialogue2 = select2_dialogues[0];
+    select2.addEventListener('click', () => {
+        selectContainer.style.display = 'none';
+        dialogueElement.textContent = dialogue2.text;
+        if (dialogue2.name === "" && dialogue2.img === "") {
+            nameWindow.style.visibility = 'hidden';
+            characterImageElement.style.visibility = 'hidden';
+        }
+            
+    });
+}
+
 nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
+    if(currentDialogueIndex === 14){
+        selectContainer.style.display = 'flex';
+        yeojooChoise();
+    }
     displayDialogue(currentDialogueIndex);
     console.log(currentDialogueIndex)
 });
