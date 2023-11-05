@@ -1,14 +1,13 @@
 const dialogues = [
     { name: "김여주", text: "저건 픽셀이잖아!", img: "images/김여주 표정5.png", background: "images/등굣길 배경.png"},
-    { name: "", text: "앞에 있는 저 이상한 사람은 꽤 여유롭게 교문을 통과하고 있다", img: "images/도윤 ver.1.png", background: "images/등굣길 배경.png" },
+    { name: "", text: "앞에 있는 저 이상한 사람은 꽤 여유롭게 교문을 통과하고 있다", img: "images/최재율 ver.1.png", background: "images/등굣길 배경.png" },
     { name: "김여주", text: "지금 이게 문제가 아니지! 일단 달리고 보자", img: "images/김여주 표정2.png", background: "images/등굣길 배경.png" },
     { name: "김여주", text: "허억, 허억,", img: "images/김여주 표정1.png", background: "images/학교 배경.png" },
     { name: "", text: "간신히 교문을 통과했다", img: "", background: "images/학교 배경.png" },
     { name: "", text: "숨을 고르고 있는 나를 그 이상한 픽셀이 쳐다보았다", img: "", background: "images/학교 배경.png" },
-    { name: "???", text: "음...", img: "images/도윤 ver.1.png", background: "images/학교 배경.png" },
-    { name: "", text: "픽셀 인간은 뚫어져라 나를 쳐다보다가 쌩 가버렸다", img: "", background: "images/학교 배경.png" },    
+    { name: "", text: "픽셀 인간은 살짝 쳐다보기만 할 뿐 아무 말 없이 천천히 걸어갔다", img: "", background: "images/학교 배경.png" },    
     { name: "김여주", text: "...?뭐야", img: "images/김여주 표정3.png", background: "images/학교 배경.png" },
-    { name: "김여주", text: "아, 나도 서둘러서 가야겠다", img: "images/김여주 표정2.png", background: "images/학교 배경.png" }
+    { name: "김여주", text: "나도 서둘러서 가야겠다", img: "images/김여주 표정2.png", background: "images/학교 배경.png" }
 ];
 
 let currentDialogueIndex = 0;

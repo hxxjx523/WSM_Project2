@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="css/story.css">
 </head>
 <body>
+    <button onclick="phone()" style="float: right;"><img src="images/phone.png" alt="" class="phone"></button>
     <div class="container">
+        <div class="selectContainer">
+            <button class="select1">키스한다</button>
+            <button class="select2">키갈한다</button>
+        </div>
         <div class="character"><img src="" alt="" class="imgCharacter"></div>
         <div class="nameWindow">
             <div class="name"></div>
@@ -20,7 +25,15 @@
             <div class="button"><button id="nextButton"><img src="images/nextButton.png" alt=" "></button></div>
         </div>
     </div>
-    
-    <script src="js/story1_dialogue.js" type="module"></script>
+
+    <script>
+        function phone(){
+            var popupX = (window.screen.width / 2) - (400 / 2);
+            var popupY= (window.screen.height /2) - (600 / 2);
+            window.open('home.html', 'phone', 'status=no, height=600, width=400, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
+        }
+    </script>
+
+    <script src="js/BaekLeeHyunRoute_dialogue.js"></script>
 </body>
 </html>
