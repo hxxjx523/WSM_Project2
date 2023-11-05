@@ -32,6 +32,24 @@
     z-index: 3;
 }
 
+.select1, .select2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: aliceblue;
+    width: 200px;
+    height: 1.7em;
+    position: relative;
+    margin-top: 0.8em;
+    z-index: 3;
+}
+
+.selectContainer{
+    margin-left: 92%;
+    margin-bottom: -35%;
+}
+
 .button {
     width: 100%;
     align-items: flex-end;
@@ -61,3 +79,4 @@
     height: auto;
     margin-top: 1.5em;
 }
+
