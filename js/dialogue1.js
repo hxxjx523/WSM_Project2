@@ -79,6 +79,8 @@ function displayDialogue(index) {
             nameWindow.style.float = 'right';
             characterImageElement.style.paddingLeft = '10vh';
             isImageOnRight = false;
+        } else {
+            nameWindow.style.display = 'none';
         }
         characterImageElement.style.display = isImageVisible ? 'block' : 'none';
     } else {
