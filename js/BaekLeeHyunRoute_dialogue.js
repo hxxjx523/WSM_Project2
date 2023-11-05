@@ -36,24 +36,28 @@ function displayDialogue(index) {
         nextButton.disabled = true;
         return;
     }
-    
+
     const dialogue = dialogues[index];
     nameElement.textContent = dialogue.name;
+
+    // 만약 대화의 이름 (dialogue.name)이 빈 문자열이라면 nameWindow를 숨김
+    if (dialogue.name === "") {
+        nameWindow.style.visibility = 'hidden';
+    } else {
+        nameWindow.style.visibility = 'visible';
+    }
+
     dialogueElement.textContent = dialogue.text;
-    
+
     if (dialogue.img) {
         characterImageElement.src = dialogue.img;
         // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
-        if (dialogue.img === 'images/김여주 전신.png' || dialogue.img === 'images/김여주 표정1.png'
-         || dialogue.img === 'images/김여주 표정2.png' || dialogue.img === 'images/김여주 표정3.png'
-        || dialogue.img === 'images/김여주 표정4.png' || dialogue.img === 'images/김여주 표정5.png') {
+        if (dialogue.img.startsWith('images/김여주')) {
             characterImageElement.style.float = 'right';
-            nameWindow.style.float = 'left';
             characterImageElement.style.paddingRight = '10vh';
             isImageOnRight = true;
-        } else if (dialogue.img === 'images/백이현 ver.1.png') {
+        }else if (dialogue.img === 'images/백이현 ver.1.png') {
             characterImageElement.style.float = 'left';
-            nameWindow.style.float = 'right';
             characterImageElement.style.paddingLeft = '10vh';
             isImageOnRight = false;
         }
