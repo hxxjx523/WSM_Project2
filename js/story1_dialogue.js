@@ -68,6 +68,14 @@ function displayDialogue(index) {
     
     const dialogue = dialogues[index];
     nameElement.textContent = dialogue.name;
+    // dialogueElement.textContent = dialogue.text;
+    // 만약 대화의 이름 (dialogue.name)이 빈 문자열이라면 nameWindow를 숨김
+    if (dialogue.name === "") {
+        nameWindow.style.visibility = 'hidden';
+    } else {
+        nameWindow.style.visibility = 'visible';
+    }
+
     dialogueElement.textContent = dialogue.text;
     
     if (dialogue.img) {
@@ -83,8 +91,6 @@ function displayDialogue(index) {
             nameWindow.style.float = 'right';
             characterImageElement.style.paddingLeft = '10vh';
             isImageOnRight = false;
-        } else {
-            nameWindow.style.display = 'none';
         }
         characterImageElement.style.display = isImageVisible ? 'block' : 'none';
     } else {
