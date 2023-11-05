@@ -33,7 +33,7 @@ function displayDialogue(index) {
 
     const dialogue = dialogues[index];
     nameElement.textContent = dialogue.name;
-
+    // dialogueElement.textContent = dialogue.text;
     // 만약 대화의 이름 (dialogue.name)이 빈 문자열이라면 nameWindow를 숨김
     if (dialogue.name === "") {
         nameWindow.style.visibility = 'hidden';
@@ -48,10 +48,12 @@ function displayDialogue(index) {
         // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
         if (dialogue.img.startsWith('images/김여주')) {
             characterImageElement.style.float = 'right';
+            nameWindow.style.float = 'left';
             characterImageElement.style.paddingRight = '10vh';
             isImageOnRight = true;
         } else{
             characterImageElement.style.float = 'left';
+            nameWindow.style.float = 'right';
             characterImageElement.style.paddingLeft = '10vh';
             isImageOnRight = false;
         }
