@@ -7,7 +7,7 @@ const dialogues = [
     { name: "", text: "숨을 고르고 있는 나를 그 이상한 픽셀이 쳐다보았다", img: "", background: "images/학교 배경.png"},
     { name: "???", text: "저기 괜찮으세요?", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
     { name: "", text: "픽셀 인간이 나에게 말을 걸었다..!", img: "", background: "images/학교 배경.png" },    
-    { name: "김여주", text: "아, 네...", img: "images/김여주 표정2.png" },
+    { name: "김여주", text: "아, 네...", img: "images/김여주 표정2.png", background: "images/학교 배경.png" },
     { name: "???", text: "첫날부터 지각할뻔 하다니 저희 둘 다 웃기네요ㅎㅎ", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
     { name: "김여주", text: "하하... 그러게요...", img: "images/김여주 표정4.png", background: "images/학교 배경.png" },
     { name: "???", text: "아, 저는 백이현이라고 해요. 그쪽은 신입생이신가요?", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
@@ -15,14 +15,9 @@ const dialogues = [
     { name: "백이현", text: "그렇구나, 1학년 교실은 저쪽이에요. 지금 뛰어가면 늦지는 않을 것 같은데?", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
 ];
 
-const backgroundImg = [
-    "images/등굣길 배경.png",
-    "images/학교 배경.png"
-];
-
 let currentDialogueIndex = 0;
-let isImageVisible = true; // 변수 추가
-let isImageOnRight = true; // 변수 추가
+let isImageVisible = true; 
+let isImageOnRight = true; 
 
 const nameElement = document.querySelector('.name');
 const dialogueElement = document.querySelector('.dialogue');

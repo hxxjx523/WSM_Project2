@@ -12,8 +12,8 @@ const dialogues = [
 ];
 
 let currentDialogueIndex = 0;
-let isImageVisible = true; // 변수 추가
-let isImageOnRight = true; // 변수 추가
+let isImageVisible = true; 
+let isImageOnRight = true; 
 
 const nameElement = document.querySelector('.name');
 const dialogueElement = document.querySelector('.dialogue');
