@@ -23,10 +23,12 @@ const dialogues = [
 ];
 
 const select1_dialogues = [
+    { name: "김여주", text: "정말요? 감사합니다", img:"images/김여주 전신.png", background: "images/학교 배경.png" },    
     { name: "", text: "나는 급하게 교실로 뛰어갔다", img: "", background: "images/학교 배경.png" },    
 ];
 
 const select2_dialogues = [
+    { name: "김여주", text: "저도 알고 있어요", img:"images/김여주 표정2.png", background: "images/학교 배경.png" },    
     { name: "백이현", text: "..그렇군요", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
     { name: "", text: "나는 급하게 교실로 뛰어갔다", img: "", background: "images/학교 배경.png" },    
 ];
