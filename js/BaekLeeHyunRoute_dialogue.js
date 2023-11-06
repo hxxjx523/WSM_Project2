@@ -13,22 +13,23 @@ const dialogues = [
     { name: "???", text: "아, 저는 백이현이라고 해요. 그쪽은 신입생이신가요?", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
     { name: "김여주", text: "..네! 저는 김여주라고 합니다.. 1학년이에요..", img: "images/김여주 표정4.png", background: "images/학교 배경.png" },
     { name: "백이현", text: "그렇구나, 1학년 교실은 저쪽이에요. 지금 뛰어가면 늦지는 않을 것 같은데?", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
-    // { name: "김여주", text: "하.. 다행히 늦지 않은 것같아", img: "images/김여주 표정5.png", background: "images/교실 배경.png"},
-    // { name: "", text: "나는 내 이름 스티커가 붙여진 책상에 앉았다", img: "", background: "images/교실 배경.png"},
-    // { name: "", text: "그러고 보니 아침에 이상한 일이 일어나서 학교에 대한 설명을 못했다", img: "", background: "images/학교 설명 배경.png"},
-    // { name: "", text: "내가 지금 있는 이 학교는 유명한 사립 고등학교, '장미고등학교'다", img: "", background: "images/학교 설명 배경.png"},
-    // { name: "", text: "장미고는 사립이면서 연예인도 많이 배출하기에 꿈의 학교로 불린다", img: "", background: "images/학교 설명 배경.png"},
-    // { name: "", text: "그리고 무엇보다 장미고는 미남이 많기로 유명하다!", img: "", background: "images/학교 설명 배경.png"},
-    // { name: "", text: "사실 내가 좋아하는 아이돌 신재현이 장미고 졸업생이다", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "미친듯이 달려서 교실에 도착했다", img: "", background: "images/교실 배경.png"},
+    { name: "김여주", text: "하.. 다행히 늦지 않은 것같아", img: "images/김여주 표정5.png", background: "images/교실 배경.png"},
+    { name: "", text: "나는 내 이름 스티커가 붙여진 책상에 앉았다", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "그러고 보니 아침에 이상한 일이 일어나서 학교에 대한 설명을 못했다", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "내가 지금 있는 이 학교는 유명한 사립 고등학교, '장미고등학교'다", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "장미고는 사립이면서 연예인도 많이 배출하기에 꿈의 학교로 불린다", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "그리고 무엇보다 장미고는 미남이 많기로 유명하다!", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "사실 내가 좋아하는 아이돌 신재현이 장미고 졸업생이다", img: "", background: "images/학교 설명 배경.png"},
 ];
 
 const select1_dialogues = [
-    { name: "김여주", text: "정말요? 감사합니다", img:"images/김여주 전신.png", background: "images/학교 배경.png" },    
+    // { name: "김여주", text: "정말요? 감사합니다", img:"images/김여주 전신.png", background: "images/학교 배경.png" },    
     { name: "", text: "나는 급하게 교실로 뛰어갔다", img: "", background: "images/학교 배경.png" },    
 ];
 
 const select2_dialogues = [
-    { name: "김여주", text: "저도 알고 있어요", img:"images/김여주 표정2.png", background: "images/학교 배경.png" },    
+    // { name: "김여주", text: "저도 알고 있어요", img:"images/김여주 표정2.png", background: "images/학교 배경.png" },    
     { name: "백이현", text: "..그렇군요", img: "images/백이현 ver.1.png", background: "images/학교 배경.png" },
     { name: "", text: "나는 급하게 교실로 뛰어갔다", img: "", background: "images/학교 배경.png" },    
 ];
@@ -128,9 +129,10 @@ function yeojooChoise(){
 
 nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
-    if(currentDialogueIndex === 14){
+    if(currentDialogueIndex === 13){
         selectContainer.style.display = 'flex';
         yeojooChoise();
+        displayDialogue(14);
     }
     displayDialogue(currentDialogueIndex);
     console.log(currentDialogueIndex)
