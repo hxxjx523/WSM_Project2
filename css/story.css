@@ -1,7 +1,11 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 img{
     width: 100%;
-    height: 100%;
+    height: 100%;   
 }
 
 .container{
@@ -87,24 +91,13 @@ img{
 
 @media screen and (max-width: 720px) {
     .dialogueWindow{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: pink;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         width: 90vw;
-        height: 6em;
-        margin: auto 5%;
-        position: relative;
-        z-index: 2;
-        flex-direction: column;
+        height: 8em;
     }
 
     .nameWindow{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         background-color: aliceblue;
         margin: auto 5%;
         width: 170px;
@@ -114,7 +107,7 @@ img{
     }
 
     .character{
-        max-height: 50vw;
+        max-height: 60vw;
         overflow: hidden;
         margin-bottom: -120px;
         position: relative;
@@ -122,17 +115,16 @@ img{
     
     }
 
+    .imgCharacter{
+        width: 50vw;
+    }
+
     .select1, .select2{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
+        font-size: 1rem;
         background-color: aliceblue;
         width: 200px;
         height: 2em;
-        position: relative;
         margin-top: 0;
-        z-index: 3;
     }   
 
     .button {
@@ -140,5 +132,9 @@ img{
         align-items: flex-end;
         margin-right: 5%;
         position: relative;
+    }
+
+    #nextButton{
+        width: 100px;
     }
 }
