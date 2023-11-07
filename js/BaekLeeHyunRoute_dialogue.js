@@ -91,15 +91,11 @@ function displayDialogue(index) {
     }
 }
 
-function yeojooChoise(){
+function yeojooChoise(index){
     
     let likability = 0;
     let currentSelect1Index = 0;
 
-    // if (index >= dialogues.length) {
-    //     nextButton.disabled = true;
-    //     return;
-    // }
 
     const dialogue = select1_dialogues[0];
     
@@ -112,6 +108,11 @@ function yeojooChoise(){
             nameWindow.style.visibility = 'hidden';
             characterImageElement.style.visibility = 'hidden';
         }
+
+        if (index >= dialogues.length) {
+            nextButton.disabled = true;
+            return;
+        }
         
     });
     
@@ -123,6 +124,11 @@ function yeojooChoise(){
             nameWindow.style.visibility = 'hidden';
             characterImageElement.style.visibility = 'hidden';
         }
+
+        if (index >= dialogues.length) {
+            nextButton.disabled = true;
+            return;
+        }
             
     });
 }
@@ -131,8 +137,12 @@ nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
     if(currentDialogueIndex === 13){
         selectContainer.style.display = 'flex';
+<<<<<<< HEAD
+        yeojooChoise(currentDialogueIndex);
+=======
         yeojooChoise();
         displayDialogue(14);
+>>>>>>> f0768612f842a81202aea6e7d7c2615ecaff9d19
     }
     displayDialogue(currentDialogueIndex);
     console.log(currentDialogueIndex)
