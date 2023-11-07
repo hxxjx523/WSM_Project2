@@ -91,7 +91,7 @@ function displayDialogue(index) {
     }
 }
 
-function yeojooChoise(index){
+function yeojooChoise(){
     
     let likability = 0;
     let currentSelect1Index = 0;
@@ -109,10 +109,10 @@ function yeojooChoise(index){
             characterImageElement.style.visibility = 'hidden';
         }
 
-        if (index >= dialogues.length) {
-            nextButton.disabled = true;
-            return;
-        }
+        // if (index >= dialogues.length) {
+        //     nextButton.disabled = true;
+        //     return;
+        // }
         
     });
     
@@ -124,27 +124,24 @@ function yeojooChoise(index){
             nameWindow.style.visibility = 'hidden';
             characterImageElement.style.visibility = 'hidden';
         }
-
-        if (index >= dialogues.length) {
-            nextButton.disabled = true;
-            return;
-        }
+        
+        // if (index >= dialogues.length) {
+            //     nextButton.disabled = true;
+            //     return;
+            // }
             
-    });
-}
-
-nextButton.addEventListener('click', () => {
-    currentDialogueIndex++;
-    if(currentDialogueIndex === 13){
-        selectContainer.style.display = 'flex';
-<<<<<<< HEAD
-        yeojooChoise(currentDialogueIndex);
-=======
-        yeojooChoise();
-        displayDialogue(14);
->>>>>>> f0768612f842a81202aea6e7d7c2615ecaff9d19
+        });
     }
-    displayDialogue(currentDialogueIndex);
+    
+    nextButton.addEventListener('click', () => {
+        currentDialogueIndex++;
+        if(currentDialogueIndex === 13){
+            selectContainer.style.display = 'flex';
+            yeojooChoise();
+            // displayDialogue(14);
+        }
+        characterImageElement.style.visibility = 'visible';
+        displayDialogue(currentDialogueIndex);
     console.log(currentDialogueIndex)
 });
 
