@@ -7,7 +7,15 @@ const dialogues = [
     { name: "", text: "숨을 고르고 있는 나를 그 이상한 픽셀이 쳐다보았다", img: "", background: "images/학교 배경.png" },
     { name: "", text: "픽셀 인간은 살짝 쳐다보기만 할 뿐 아무 말 없이 천천히 걸어갔다", img: "", background: "images/학교 배경.png" },    
     { name: "김여주", text: "...?뭐야", img: "images/김여주 표정3.png", background: "images/학교 배경.png" },
-    { name: "김여주", text: "나도 서둘러서 가야겠다", img: "images/김여주 표정2.png", background: "images/학교 배경.png" }
+    { name: "김여주", text: "나도 서둘러서 가야겠다", img: "images/김여주 표정2.png", background: "images/학교 배경.png" },
+    { name: "김여주", text: "하.. 다행히 늦지 않은 것같아", img: "images/김여주 표정5.png", background: "images/교실 배경.png"},
+    { name: "", text: "나는 내 이름 스티커가 붙여진 책상에 앉았다", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "그러고 보니 아침에 이상한 일이 일어나서 학교에 대한 설명을 못했다", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "내가 지금 있는 이 학교는 유명한 사립 고등학교, '장미고등학교'다", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "장미고는 사립이면서 연예인도 많이 배출하기에 꿈의 학교로 불린다", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "그리고 무엇보다 장미고는 미남이 많기로 유명하다!", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "사실 내가 좋아하는 아이돌 신재현이 장미고 졸업생이다", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "이런 소식을 들은 중학생의 나는 작정하고 공부만 해서 들어올 수 있었다", img: "", background: "images/학교 설명 배경.png"}
 ];
 
 let currentDialogueIndex = 0;
@@ -44,10 +52,12 @@ function displayDialogue(index) {
         // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
         if (dialogue.img.startsWith('images/김여주')) {
             characterImageElement.style.float = 'right';
+            nameWindow.style.float = 'left';
             characterImageElement.style.paddingRight = '10vh';
             isImageOnRight = true;
-        } else {
+        } else{
             characterImageElement.style.float = 'left';
+            nameWindow.style.float = 'right';
             characterImageElement.style.paddingLeft = '10vh';
             isImageOnRight = false;
         }
@@ -55,7 +65,7 @@ function displayDialogue(index) {
     } else {
         characterImageElement.style.display = 'none';
     }
-
+    
     if (dialogue.background) {
         document.body.style.backgroundImage = `url('${dialogue.background}')`;
     } else {
