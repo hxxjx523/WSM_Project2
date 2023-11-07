@@ -108,19 +108,13 @@ function yeojooChoise(index){
     
     nextButton.addEventListener('click', () => {
         currentDialogueIndex++;
-        if(currentDialogueIndex === 13){
-            selectContainer.style.display = 'flex';
-            yeojooChoise(currentDialogueIndex);
+        if(currentDialogueIndex === 12){
+            window.location.href = "DoyoonRoute2.html";
         }
         displayDialogue(currentDialogueIndex);
-        characterImageElement.style.visibility = 'visible';
-    // console.log(currentDialogueIndex)
-});
+        console.log(currentDialogueIndex); 
+    });
 
 window.addEventListener('DOMContentLoaded', () => {
     displayDialogue(currentDialogueIndex);
 });
-
-// if(currentDialogueIndex === 16){
-//     window.location.href = mainBoy + "Route.html";
-// }
