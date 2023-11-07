@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(255, 209, 244);
+}
+
+.homeBtn{
+    float: right;
+    margin-top: 0.6em;
+}
+
+.container{
+    background-color: rgb(255, 245, 253);
+}
+
+
+button{
+    font-size: 1.2rem;
+}
+
+.name{
+    margin: 8px 5px;
+}
