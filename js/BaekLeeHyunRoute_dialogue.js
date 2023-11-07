@@ -21,6 +21,7 @@ const dialogues = [
     { name: "", text: "장미고는 사립이면서 연예인도 많이 배출하기에 꿈의 학교로 불린다", img: "", background: "images/학교 설명 배경.png"},
     { name: "", text: "그리고 무엇보다 장미고는 미남이 많기로 유명하다!", img: "", background: "images/학교 설명 배경.png"},
     { name: "", text: "사실 내가 좋아하는 아이돌 신재현이 장미고 졸업생이다", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "이런 소식을 들은 중학생의 나는 작정하고 공부만 해서 들어올 수 있었다", img: "", background: "images/학교 설명 배경.png"},
 ];
 
 const select1_dialogues = [
@@ -91,7 +92,7 @@ function displayDialogue(index) {
     }
 }
 
-function yeojooChoise(){
+function yeojooChoise(index){
     
     let likability = 0;
     let currentSelect1Index = 0;
@@ -108,28 +109,17 @@ function yeojooChoise(){
             nameWindow.style.visibility = 'hidden';
             characterImageElement.style.visibility = 'hidden';
         }
-
-        // if (index >= dialogues.length) {
-        //     nextButton.disabled = true;
-        //     return;
-        // }
-        
-    });
-    
-    const dialogue2 = select2_dialogues[0];
-    select2.addEventListener('click', () => {
-        selectContainer.style.display = 'none';
-        dialogueElement.textContent = dialogue2.text;
-        if (dialogue2.name === "" && dialogue2.img === "") {
-            nameWindow.style.visibility = 'hidden';
-            characterImageElement.style.visibility = 'hidden';
-        }
-        
-        // if (index >= dialogues.length) {
-            //     nextButton.disabled = true;
-            //     return;
-            // }
             
+    });
+        
+        const dialogue2 = select2_dialogues[0];
+        select2.addEventListener('click', () => {
+            selectContainer.style.display = 'none';
+            dialogueElement.textContent = dialogue2.text;
+            if (dialogue2.name === "" && dialogue2.img === "") {
+                nameWindow.style.visibility = 'hidden';
+                characterImageElement.style.visibility = 'hidden';
+            }
         });
     }
     
@@ -137,12 +127,11 @@ function yeojooChoise(){
         currentDialogueIndex++;
         if(currentDialogueIndex === 13){
             selectContainer.style.display = 'flex';
-            yeojooChoise();
-            // displayDialogue(14);
+            yeojooChoise(currentDialogueIndex);
         }
-        characterImageElement.style.visibility = 'visible';
         displayDialogue(currentDialogueIndex);
-    console.log(currentDialogueIndex)
+        characterImageElement.style.visibility = 'visible';
+    // console.log(currentDialogueIndex)
 });
 
 window.addEventListener('DOMContentLoaded', () => {

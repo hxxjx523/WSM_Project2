@@ -85,3 +85,40 @@ img{
     margin-top: 1.5em;
 }
 
+@media screen and (max-width: 720px) {
+    .dialogueWindow{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: pink;
+        font-size: 1.5rem;
+        width: 90vw;
+        height: 6em;
+        margin: auto 5%;
+        position: relative;
+        z-index: 2;
+        flex-direction: column;
+    }
+
+    .nameWindow{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        background-color: aliceblue;
+        margin: auto 5%;
+        width: 170px;
+        height: 2em;
+        position: relative;
+        z-index: 3;
+    }
+
+    .character{
+        max-height: 50vw;
+        overflow: hidden;
+        margin-bottom: -120px;
+        position: relative;
+        z-index: 1;
+    
+    }
+}
