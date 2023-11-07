@@ -129,15 +129,14 @@ function yeojooChoise(index){
             selectContainer.style.display = 'flex';
             yeojooChoise(currentDialogueIndex);
         }
+        if(currentDialogueIndex===23){
+            window.location.href = "BaekLeeHyunRoute2.html";
+        }
         displayDialogue(currentDialogueIndex);
         characterImageElement.style.visibility = 'visible';
-    // console.log(currentDialogueIndex)
+        console.log(currentDialogueIndex);
 });
 
 window.addEventListener('DOMContentLoaded', () => {
     displayDialogue(currentDialogueIndex);
 });
-
-// if(currentDialogueIndex === 16){
-//     window.location.href = mainBoy + "Route.html";
-// }
