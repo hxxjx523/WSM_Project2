@@ -86,6 +86,7 @@ function updateUI(dialogue) {
     }
 }
 
+<<<<<<< HEAD
 function displayDialogue(index) {
     if (index >= dialogues.length) {
         nextButton.disabled = true;
@@ -112,6 +113,12 @@ function yeojooChoice(index) {
     let likability = 0;
     let currentSelect1Index = 1;
 
+=======
+function yeojooChoise(){
+    
+    let likability = 0;
+    
+>>>>>>> 963847ce42b24e6eb12f2970c31c54ce2877bfbf
     const dialogue = select1_dialogues[0];
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';

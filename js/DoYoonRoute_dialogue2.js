@@ -91,10 +91,9 @@ function displayDialogue(index) {
     }
 }
 
-function yeojooChoise(index){
+function yeojooChoise(){
     
     let likability = 0;
-    let currentSelect1Index = 0;
 
 
     const dialogue = select1_dialogues[0];

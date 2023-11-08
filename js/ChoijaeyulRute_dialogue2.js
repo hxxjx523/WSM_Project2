@@ -21,11 +21,21 @@ const select1_dialogues = [
     { name: "김여주", text: "어? 그렇게까ㅈ", img: "images/김여주 표정4.png", background: "images/교실 배경.png" },
     { name: "", text: "(드르륵)", img: "", background: "images/교실 배경.png"},
     { name: "", text: "선생으로 보이는 사람이 들어왔다", img: "", background: "images/교실 배경.png"},
+    { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ...", img: "", background: "images/교실 배경.png"},
 ];
 
 const select2_dialogues = [
     { name: "김여주", text: "미남이 많아서! 난 잘생긴 사람 진짜 좋아하거든~", img: "images/김여주 표정7.png", background: "images/교실 배경.png" },      
     { name: "김여주", text: "내가 처음보는 사람한테 무슨 말을..", img: "images/김여주 표정1.png", background: "images/교실 배경.png" },      
+    { name: "최재율", text: "하하! 솔직하네", img: "images/최재율 ver.1-2.png", background: "images/교실 배경.png" },
+    { name: "", text: "반응이 좋다, 이런 게 취향인가?", img: "", background: "images/교실 배경.png"},
+    { name: "최재율", text: "너는 생각보다 재밌는 사람인 것 같이", img: "images/최재율 ver.1-2.png", background: "images/교실 배경.png" },
+    { name: "김여주", text: "음...? 고마워", img: "images/김여주 표정4.png", background: "images/교실 배경.png" },      
+    { name: "", text: "(드르륵)", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "선생으로 보이는 사람이 들어왔다", img: "", background: "images/교실 배경.png"},
+    { name: "최재율", text: "그럼 이따 봐~", img: "images/최재율 ver.1-2.png", background: "images/교실 배경.png" },
+    { name: "", text: "최재율은 자리로 돌아갔다", img: "", background: "images/교실 배경.png"},
+    { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ...", img: "", background: "images/교실 배경.png"},
 ];
 
 let currentDialogueIndex = 0;
@@ -86,40 +96,12 @@ function displayDialogue(index) {
     }
 }
 
-function yeojooChoise(index){
-    
-    let likability = 0;
-    let currentSelect1Index = 0;
 
 
-    const dialogue = select1_dialogues[0];
-    
-    select1.addEventListener('click', () => {
-        selectContainer.style.display = 'none';
-        likability++;
-        console.log(likability);
-        dialogueElement.textContent = dialogue.text;
-        if (dialogue.name === "" && dialogue.img === "") {
-            nameWindow.style.visibility = 'hidden';
-            characterImageElement.style.visibility = 'hidden';
-        }
-            
-    });
-        
-        const dialogue2 = select2_dialogues[0];
-        select2.addEventListener('click', () => {
-            selectContainer.style.display = 'none';
-            dialogueElement.textContent = dialogue2.text;
-            if (dialogue2.name === "" && dialogue2.img === "") {
-                nameWindow.style.visibility = 'hidden';
-                characterImageElement.style.visibility = 'hidden';
-            }
-        });
-    }
 
 nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
-        if(currentDialogueIndex === 13){
+        if(currentDialogueIndex === 14){
             selectContainer.style.display = 'flex';
             yeojooChoise(currentDialogueIndex);
         }
