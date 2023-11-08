@@ -1,0 +1,127 @@
+function displayDialogue(index) {
+    if (index >= dialogues.length) {
+        nextButton.disabled = true;
+        return;
+    }
+
+    const dialogue = dialogues[index];
+    nameElement.textContent = dialogue.name;
+    // dialogueElement.textContent = dialogue.text;
+    // 만약 대화의 이름 (dialogue.name)이 빈 문자열이라면 nameWindow를 숨김
+    if (dialogue.name === "") {
+        nameWindow.style.visibility = 'hidden';
+    } else {
+        nameWindow.style.visibility = 'visible';
+    }
+
+    dialogueElement.textContent = dialogue.text;
+    
+    if (dialogue.img) {
+        characterImageElement.src = dialogue.img;
+        // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
+        if (dialogue.img.startsWith('images/김여주')) {
+            characterImageElement.style.float = 'right';
+            nameWindow.style.float = 'left';
+            characterImageElement.style.paddingRight = '10vh';
+            isImageOnRight = true;
+        } else{
+            characterImageElement.style.float = 'left';
+            nameWindow.style.float = 'right';
+            characterImageElement.style.paddingLeft = '10vh';
+            isImageOnRight = false;
+        }
+        characterImageElement.style.display = isImageVisible ? 'block' : 'none';
+    } else {
+        characterImageElement.style.display = 'none';
+    }
+    
+    if (dialogue.background) {
+        document.body.style.backgroundImage = `url('${dialogue.background}')`;
+    } else {
+        document.body.style.backgroundImage = 'url("기본 배경 이미지 URL")';
+    }
+}
+
+function yeojooChoise(index){
+    
+    let likability = 0;
+    let currentSelect1Index = 0;
+
+
+    const dialogue = select1_dialogues[0];
+    
+    select1.addEventListener('click', () => {
+        selectContainer.style.display = 'none';
+        likability++;
+        console.log(likability);
+        displayDialogue(index);
+        dialogueElement.textContent = dialogue.text;
+        nameElement.textContent = dialogue.name;
+        
+        if (dialogue.name === "" && dialogue.img === "") {
+            nameWindow.style.visibility = 'hidden';
+            characterImageElement.style.visibility = 'hidden';
+        }
+        if (dialogue.img) {
+            characterImageElement.src = dialogue.img;
+            // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
+            if (dialogue.img.startsWith('images/김여주')) {
+                characterImageElement.style.float = 'right';
+                nameWindow.style.float = 'left';
+                characterImageElement.style.paddingRight = '10vh';
+                isImageOnRight = true;
+            } else{
+                characterImageElement.style.float = 'left';
+                nameWindow.style.float = 'right';
+                characterImageElement.style.paddingLeft = '10vh';
+                isImageOnRight = false;
+            }
+            characterImageElement.style.display = isImageVisible ? 'block' : 'none';
+        } else {
+            characterImageElement.style.display = 'none';
+        }
+        
+        if (dialogue.background) {
+            document.body.style.backgroundImage = `url('${dialogue.background}')`;
+        } else {
+            document.body.style.backgroundImage = 'url("기본 배경 이미지 URL")';
+        }
+
+    });
+        
+        const dialogue2 = select2_dialogues[0];
+        select2.addEventListener('click', () => {
+            selectContainer.style.display = 'none';
+            dialogueElement.textContent = dialogue.text;
+            nameElement.textContent = dialogue.name;
+            characterImageElement.src = dialogue.img;
+            if (dialogue2.name === "" && dialogue2.img === "") {
+                nameWindow.style.visibility = 'hidden';
+                characterImageElement.style.visibility = 'hidden';
+            }
+            if (dialogue.img) {
+                characterImageElement.src = dialogue.img;
+                // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
+                if (dialogue.img.startsWith('images/김여주')) {
+                    characterImageElement.style.float = 'right';
+                    nameWindow.style.float = 'left';
+                    characterImageElement.style.paddingRight = '10vh';
+                    isImageOnRight = true;
+                } else{
+                    characterImageElement.style.float = 'left';
+                    nameWindow.style.float = 'right';
+                    characterImageElement.style.paddingLeft = '10vh';
+                    isImageOnRight = false;
+                }
+                characterImageElement.style.display = isImageVisible ? 'block' : 'none';
+            } else {
+                characterImageElement.style.display = 'none';
+            }
+            
+            if (dialogue.background) {
+                document.body.style.backgroundImage = `url('${dialogue.background}')`;
+            } else {
+                document.body.style.backgroundImage = 'url("기본 배경 이미지 URL")';
+            }
+        });
+    }
