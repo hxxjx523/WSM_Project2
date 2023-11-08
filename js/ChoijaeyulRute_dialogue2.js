@@ -38,6 +38,13 @@ const select2_dialogues = [
     { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ...", img: "", background: "images/교실 배경.png"},
 ];
 
+/* 
+
+선택하고 중간에 이름이랑 이미지 안 나옴
+
+*/
+
+
 let currentDialogueIndex = 0;
 let isImageVisible = true; 
 let isImageOnRight = true; 
