@@ -112,33 +112,18 @@ function yeojooChoice(index) {
     let likability = 0;
     let currentSelect1Index = 1;
 
-    // select1.addEventListener('click', () => {
-    //     selectContainer.style.display = 'none';
-    //     likability++;
-    //     console.log(likability);
-    //     updateUI(select1_dialogues[0]);
-    //     nextButton.addEventListener('click', () => {
-    //             updateUI(select2_dialogues[currentSelect1Index]);
-    //             currentSelect1Index++;
-    //         });
-    // });
-    
+    const dialogue = select1_dialogues[0];
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         likability++;
         console.log(likability);
-        updateUI(select1_dialogues[0]);
-        const select1NextButton = () => {
+        updateUI(dialogue);
+        nextButton.addEventListener('click', () => {
             updateUI(select1_dialogues[currentSelect1Index]);
-            currentSelect1Index++;
-        };
-        nextButton.addEventListener('click', select1NextButton);
-        currentSelect1Index=14;
+            selectContainer.style.display = 'none';
+        });
+        currentSelect1Index-=1;
     });
-    
-    // 밖의 nextButton는 변경하지 않습니다.
-    
-    
     
     const dialogue2 = select2_dialogues[0];
     select2.addEventListener('click', () => {
@@ -154,7 +139,7 @@ function yeojooChoice(index) {
                 currentSelect1Index++;
             };
             nextButton.addEventListener('click', select2NextButton);
-            currentSelect1Index=14; 
+            currentDialogueIndex-=2; 
         });
     }
     
@@ -164,16 +149,16 @@ function yeojooChoice(index) {
     
     nextButton.addEventListener('click', () => {
         currentDialogueIndex++;
-        displayDialogue(currentDialogueIndex);
         if(currentDialogueIndex === 13){
             selectContainer.style.display = 'flex';
             yeojooChoice(currentDialogueIndex);
         }
-        if(currentDialogueIndex===23){
-            window.location.href = "BaekLeeHyunRoute2.html";
-        }
-        characterImageElement.style.visibility = 'visible';
-        console.log(currentDialogueIndex);
+    if(currentDialogueIndex===23){
+        window.location.href = "BaekLeeHyunRoute2.html";
+    }
+    displayDialogue(currentDialogueIndex);
+    characterImageElement.style.visibility = 'visible';
+    console.log(currentDialogueIndex);
 });
 
 window.addEventListener('DOMContentLoaded', () => {
