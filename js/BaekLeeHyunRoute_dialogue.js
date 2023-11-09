@@ -162,3 +162,9 @@ function yeojooChoice(index) {
 window.addEventListener('DOMContentLoaded', () => {
     displayDialogue(currentDialogueIndex);
 });
+
+function phone(){
+    var popupX = (window.screen.width / 2) - (400 / 2);
+    var popupY= (window.screen.height /2) - (600 / 2);
+    window.open('home.html', 'phone', 'status=no, height=600, width=400, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
+}
