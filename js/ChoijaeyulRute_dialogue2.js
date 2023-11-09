@@ -29,7 +29,7 @@ const select2_dialogues = [
     { name: "김여주", text: "내가 처음보는 사람한테 무슨 말을..", img: "images/김여주 표정1.png", background: "images/교실 배경.png" },      
     { name: "최재율", text: "하하! 솔직하네", img: "images/최재율 ver.1-2.png", background: "images/교실 배경.png" },
     { name: "", text: "반응이 좋다, 이런 게 취향인가?", img: "", background: "images/교실 배경.png"},
-    { name: "최재율", text: "너는 생각보다 재밌는 사람인 것 같이", img: "images/최재율 ver.1-2.png", background: "images/교실 배경.png" },
+    { name: "최재율", text: "너는 생각보다 재밌는 사람인 것 같아", img: "images/최재율 ver.1-2.png", background: "images/교실 배경.png" },
     { name: "김여주", text: "음...? 고마워", img: "images/김여주 표정4.png", background: "images/교실 배경.png" },      
     { name: "", text: "(드르륵)", img: "", background: "images/교실 배경.png"},
     { name: "", text: "선생으로 보이는 사람이 들어왔다", img: "", background: "images/교실 배경.png"},
@@ -37,13 +37,6 @@ const select2_dialogues = [
     { name: "", text: "최재율은 자리로 돌아갔다", img: "", background: "images/교실 배경.png"},
     { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ...", img: "", background: "images/교실 배경.png"},
 ];
-
-/* 
-
-선택하고 중간에 이름이랑 이미지 안 나옴
-
-*/
-
 
 let currentDialogueIndex = 0;
 let isImageVisible = true; 
@@ -66,6 +59,9 @@ function updateUI(dialogue) {
     if (dialogue.name === "" && dialogue.img === "") {
         nameWindow.style.visibility = 'hidden';
         characterImageElement.style.visibility = 'hidden';
+    }else{
+        nameWindow.style.visibility = 'visible';
+        characterImageElement.style.visibility = 'visible';
     }
 
     if (dialogue.img) {
@@ -117,9 +113,9 @@ function displayDialogue(index) {
 
 function yeojooChoice(index) {
     let likability = 0;
-    let currentSelect1Index = 0;
+    let currentSelect1Index = 1;
 
-    const dialogue = select1_dialogues[currentSelect1Index];
+    const dialogue = select1_dialogues[0];
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         likability++;
@@ -131,10 +127,10 @@ function yeojooChoice(index) {
                 currentSelect1Index++;
             };
             nextButton.addEventListener('click', select1NextButton);
-            // currentDialogueIndex-=1;
+            currentDialogueIndex-=1;
     });
     
-    const dialogue2 = select2_dialogues[currentSelect1Index];
+    const dialogue2 = select2_dialogues[0];
     select2.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         updateUI(dialogue2);
@@ -144,20 +140,20 @@ function yeojooChoice(index) {
                 currentSelect1Index++;
             };
             nextButton.addEventListener('click', select2NextButton);
-            // currentDialogueIndex-=2; 
+            currentDialogueIndex-=2; 
         });
     }
     
     //////////////////////////////////////////////////////////////
-    // nextButton.disabled = true;
     
     
-nextButton.addEventListener('click', () => {
-    currentDialogueIndex++;
-    if(currentDialogueIndex === 13){
-        selectContainer.style.display = 'flex';
-        yeojooChoice(currentDialogueIndex);
-    }
+    
+    nextButton.addEventListener('click', () => {
+        currentDialogueIndex++;
+        if(currentDialogueIndex === 13){
+            selectContainer.style.display = 'flex';
+            yeojooChoice(currentDialogueIndex);
+        }
     displayDialogue(currentDialogueIndex);
     characterImageElement.style.visibility = 'visible';
     console.log(currentDialogueIndex);
