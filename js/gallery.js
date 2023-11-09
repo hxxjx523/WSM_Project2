@@ -9,7 +9,8 @@ const images = [
     { src: 'images/galleyImg/인트로 스토리 여주2.png', description: '인트로 스토리 여주2' },
     { src: 'images/galleyImg/인트로 스토리 여주3.png', description: '인트로 스토리 여주3' },
     { src: 'images/galleyImg/인트로 스토리 여주4.png', description: '인트로 스토리 여주4' },
-    { src: 'images/galleyImg/타이틀 구버전 여주.png', description: '타이틀 구버전 여주' }
+    { src: 'images/galleyImg/타이틀 구버전 여주.png', description: '타이틀 구버전 여주' },
+    { src: 'images/galleyImg/현 타이틀 여주.png', description: '현 타이틀 여주' }
 ];
 
 let currentImageIndex = 0;
