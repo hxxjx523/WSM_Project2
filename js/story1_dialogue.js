@@ -1,7 +1,5 @@
-// import { mainBoy } from './question.js';
-// console.log(mainBoy);
-
-// import { mainBoy } from "./question";
+import { mb } from "./question.js"
+console.log(mb);
 
 const dialogues = [
     { name: "김여주", text: "오늘은 고등학교 입학식이다. 왜인지 상쾌한 기분! 좋은 일이 있을 것만 같다", img: "images/김여주 전신.png" },
