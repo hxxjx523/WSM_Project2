@@ -22,22 +22,22 @@ let question3= {
 const questions = [question1, question2, question3];
 const keys = ['q1', 'a1', 'a2', 'a3'];
 
-        let currentQuestionIndex = 0;
-        let accumulatedValue = 0;
+let currentQuestionIndex = 0;
+let accumulatedValue = 0;
 
-        function displayQuestion(question) {
-            for (let key of keys) {
-                const elem = document.getElementById(key);
-                if (elem && question.hasOwnProperty(key)) {
-                    elem.innerHTML = question[key];
-                }
-            }
-            
+function displayQuestion(question) {
+    for (let key of keys) {
+        const elem = document.getElementById(key);
+        if (elem && question.hasOwnProperty(key)) {
+            elem.innerHTML = question[key];
         }
+    }
+    
+}
+
+    let mainBoy = "";
         
-        let mainBoy;
-        
-        document.getElementById("nextButton").addEventListener("click", function() {
+        const choise = () => {
             let radio = document.querySelector('input[name="answer"]:checked');
             if (radio) {
                 const selectedValue = parseInt(radio.value.substr(1)); // "a1" -> 1, "a2" -> 2, "a3" -> 3
@@ -49,9 +49,9 @@ const keys = ['q1', 'a1', 'a2', 'a3'];
                 if (currentQuestionIndex < questions.length) {
                     displayQuestion(questions[currentQuestionIndex]);
                 } else {
-                    swal("모든 질문 완료");
-                    document.getElementById("nextButton").disabled = true;
                     
+                    document.getElementById("nextButton").disabled = true;
+
                     if (accumulatedValue >= 3 && accumulatedValue <= 4) {
                         mainBoy = "DoYoon";
                     } else if (accumulatedValue >= 5 && accumulatedValue <= 7) {
@@ -62,20 +62,18 @@ const keys = ['q1', 'a1', 'a2', 'a3'];
                     
                     if (mainBoy) {
                         console.log(mainBoy); 
-                        // location.href = "story1.html";
-                        location.href = `${mainBoy}Route.html`;
+                        location.href = "story1.html";
+                        // location.href = `${mainBoy}Route.html`;
                     }
                 }
                 radio.checked = false;
-            } else {
-                swal("답변을 선택해주세요");
             }
-        });
+        }
+
+        export { mainBoy }
+        
+        document.getElementById("nextButton").addEventListener("click", choise);
         
         displayQuestion(questions[currentQuestionIndex]);
-        if (mainBoy) {
-            console.log(mainBoy);
-            
-        }
-        // export { mainBoy }
+    
         
