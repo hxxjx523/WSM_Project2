@@ -32,7 +32,7 @@ const select2_dialogues = [
     { name: "김여주", text: "누구더라?", img: "images/김여주 표정2.png", background: "images/교실 배경.png"},
     { name: "", text: "도윤은 나의 소꿉친구다", img: "", background: "images/교실 배경.png" },     
     { name: "", text: "그를 잊는 일은 있을 수 없다", img: "", background: "images/교실 배경.png" },      
-    { name: "도윤", text: "나 도윤이잖아....", img: "도윤 ver.1.png", background: "images/교실 배경.png" },      
+    { name: "도윤", text: "나 도윤이잖아....", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },      
 ];
 
 let currentDialogueIndex = 0;
@@ -115,10 +115,12 @@ function yeojooChoice(index) {
         likability++;
         console.log(likability);
         updateUI(dialogue);
-        nextButton.addEventListener('click', () => {
+        const select1extButton = () => {
             updateUI(select1_dialogues[currentSelect1Index]);
             selectContainer.style.display = 'none';
-        });
+            currentSelect1Index++;
+        };
+        nextButton.addEventListener('click', select11NextButton);
         currentSelect1Index-=1;
     });
     
