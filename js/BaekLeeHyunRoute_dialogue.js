@@ -118,21 +118,19 @@ function yeojooChoice(index) {
         likability++;
         console.log(likability);
         updateUI(dialogue);
-        nextButton.addEventListener('click', () => {
-            updateUI(select1_dialogues[currentSelect1Index]);
-            selectContainer.style.display = 'none';
-        });
-        currentSelect1Index-=1;
+            const select1NextButton = () => {
+                updateUI(select1_dialogues[currentSelect1Index]);
+                selectContainer.style.display = 'none';
+                currentSelect1Index++;
+            };
+            nextButton.addEventListener('click', select1NextButton);
+            currentDialogueIndex-=1;
     });
     
     const dialogue2 = select2_dialogues[0];
     select2.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         updateUI(dialogue2);
-        // nextButton.addEventListener('click', () => {
-            //     updateUI(select2_dialogues[currentSelect1Index]);
-            //     currentSelect1Index++;
-            // });
             const select2NextButton = () => {
                 updateUI(select2_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';

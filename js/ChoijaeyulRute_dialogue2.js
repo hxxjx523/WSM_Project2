@@ -38,6 +38,13 @@ const select2_dialogues = [
     { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ...", img: "", background: "images/교실 배경.png"},
 ];
 
+/* 
+
+선택하고 중간에 이름이랑 이미지 안 나옴
+
+*/
+
+
 let currentDialogueIndex = 0;
 let isImageVisible = true; 
 let isImageOnRight = true; 
@@ -87,10 +94,10 @@ function updateUI(dialogue) {
 }
 
 function displayDialogue(index) {
-    if (index >= dialogues.length) {
-        nextButton.disabled = true;
-        return;
-    }
+    // if (index >= dialogues.length) {
+    //     nextButton.disabled = true;
+    //     return;
+    // }
 
     const dialogue = dialogues[index];
 
@@ -110,51 +117,46 @@ function displayDialogue(index) {
 
 function yeojooChoice(index) {
     let likability = 0;
-    let currentSelect1Index = 1;
+    let currentSelect1Index = 0;
 
-    const dialogue = select1_dialogues[0];
+    const dialogue = select1_dialogues[currentSelect1Index];
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         likability++;
         console.log(likability);
         updateUI(dialogue);
-        nextButton.addEventListener('click', () => {
-            updateUI(select1_dialogues[currentSelect1Index]);
-            selectContainer.style.display = 'none';
-        });
-        currentSelect1Index-=1;
+            const select1NextButton = () => {
+                updateUI(select1_dialogues[currentSelect1Index]);
+                selectContainer.style.display = 'none';
+                currentSelect1Index++;
+            };
+            nextButton.addEventListener('click', select1NextButton);
+            // currentDialogueIndex-=1;
     });
     
-    const dialogue2 = select2_dialogues[0];
+    const dialogue2 = select2_dialogues[currentSelect1Index];
     select2.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         updateUI(dialogue2);
-        // nextButton.addEventListener('click', () => {
-            //     updateUI(select2_dialogues[currentSelect1Index]);
-            //     currentSelect1Index++;
-            // });
             const select2NextButton = () => {
                 updateUI(select2_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
                 currentSelect1Index++;
             };
             nextButton.addEventListener('click', select2NextButton);
-            currentDialogueIndex-=2; 
+            // currentDialogueIndex-=2; 
         });
     }
     
     //////////////////////////////////////////////////////////////
+    // nextButton.disabled = true;
     
     
-    
-    nextButton.addEventListener('click', () => {
-        currentDialogueIndex++;
-        if(currentDialogueIndex === 13){
-            selectContainer.style.display = 'flex';
-            yeojooChoice(currentDialogueIndex);
-        }
-    if(currentDialogueIndex===23){
-        window.location.href = "BaekLeeHyunRoute2.html";
+nextButton.addEventListener('click', () => {
+    currentDialogueIndex++;
+    if(currentDialogueIndex === 13){
+        selectContainer.style.display = 'flex';
+        yeojooChoice(currentDialogueIndex);
     }
     displayDialogue(currentDialogueIndex);
     characterImageElement.style.visibility = 'visible';
