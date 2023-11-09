@@ -89,6 +89,7 @@ img{
     width: 9em;
     height: auto;
     margin-top: 1.5em;
+    z-index: 5;
 }
 
 @media screen and (max-width: 720px) {
@@ -109,7 +110,7 @@ img{
     }
 
     .character{
-        max-height: 60vw;
+        max-height: 70vw;
         overflow: hidden;
         margin-bottom: -120px;
         position: relative;
@@ -118,7 +119,7 @@ img{
     }
 
     .imgCharacter{
-        width: 50vw;
+        width: 60vw;
     }
 
     .select1, .select2{
