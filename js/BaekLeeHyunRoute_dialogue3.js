@@ -2,6 +2,11 @@ const dialogues = [
     { name: "", text: "입학식이라 그런지 학교가 빨리 끝났다", img: "", background: "images/교실 배경.png"},
     { name: "담임선생", text: "여러분 오늘은 이만 종례하겠습니다~", img: "", background: "images/교실 배경.png" },
     { name: "김여주", text: "후..", img: "images/김여주 표정5.png", background: "images/교실 배경.png" },
+    { name: "", text: "오늘은 정말 다산다난했다..", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "아침부터 이상한 일을 겪고 지각까지 할 뻔하다니", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "참 어이없는 하루였다..", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "<김여주의 방>", img: "", background: "images/여주 방 배경.png"},
+    { name: "", text: "핸드폰 메세지에 뭔가 와 있는 것 같다", img: "", background: "images/여주 방 배경.png"},
 ];
 
 const select1_dialogues = [  
@@ -10,7 +15,6 @@ const select1_dialogues = [
 ];
 
 const select2_dialogues = [
-    { name: "김여주", text: "미남이 많아서! 난 잘생긴 사람 진짜 좋아하거든~", img: "images/김여주 표정7.png", background: "images/교실 배경.png" },      
 ];
 
 let currentDialogueIndex = 0;
