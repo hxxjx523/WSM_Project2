@@ -55,7 +55,9 @@ const select1_dialogues = [
     { name: "김여주", text: "어? 그렇게까ㅈ", img: "images/김여주 표정4.png", background: "images/교실 배경.png" },
     { name: "", text: "(드르륵)", img: "", background: "images/교실 배경.png"},
     { name: "", text: "선생으로 보이는 사람이 들어왔다", img: "", background: "images/교실 배경.png"},
+    { name: "최재율", text: "음.. 가야겠네", img: "images/최재율 ver.1.png", background: "images/교실 배경.png" },
     { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ...", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "그렇게 다음부터 최재율과 말할 수 없었다", img: "", background: "images/교실 배경.png"},
 ];
 
 const select2_dialogues = [
@@ -90,6 +92,7 @@ function updateUI(dialogue) {
     
     dialogueElement.textContent = dialogue.text;
     nameElement.textContent = dialogue.name;
+    nameWindow.style.visibility = 'vislble';
 
     if (dialogue.name === "" && dialogue.img === "") {
         nameWindow.style.visibility = 'hidden';
@@ -122,10 +125,10 @@ function updateUI(dialogue) {
 }
 
 function displayDialogue(index) {
-    if (index >= dialogues.length) {
-        nextButton.disabled = true;
-        return;
-    }
+    // if (index >= dialogues.length) {
+    //     nextButton.disabled = true;
+    //     return;
+    // }
 
     const dialogue = dialogues[index];
 
@@ -143,16 +146,12 @@ function displayDialogue(index) {
     updateUI(dialogue);
 }
 
-function yeojooChoice(index) {
-    let likability = 0;
+function yeojooChoice() {
     let currentSelect1Index = 1;
-
 
     const dialogue = select1_dialogues[0];
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';
-        likability++;
-        console.log(likability);
         updateUI(dialogue);
         const select1NextButton = () => {
             updateUI(select1_dialogues[currentSelect1Index]);
@@ -160,7 +159,6 @@ function yeojooChoice(index) {
             currentSelect1Index++;
         };
         nextButton.addEventListener('click', select1NextButton);
-        currentDialogueIndex-=1;
     });
     
     const dialogue2 = select2_dialogues[0];
@@ -177,13 +175,12 @@ function yeojooChoice(index) {
     });
 }
 
-
 nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
     characterImageElement.style.visibility = 'visible';
-    if(currentDialogueIndex === 47){
+    if(currentDialogueIndex===48){
         selectContainer.style.display = 'flex';
-        yeojooChoice(currentDialogueIndex);
+        yeojooChoice();
     }
     displayDialogue(currentDialogueIndex);
     console.log(currentDialogueIndex)
@@ -192,3 +189,9 @@ nextButton.addEventListener('click', () => {
 window.addEventListener('DOMContentLoaded', () => {
     displayDialogue(currentDialogueIndex);
 });
+    
+function phone(){
+    var popupX = (window.screen.width / 2) - (400 / 2);
+    var popupY= (window.screen.height /2) - (600 / 2);
+    window.open('home.html', 'phone', 'status=no, height=600, width=400, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
+}
