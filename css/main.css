@@ -36,13 +36,14 @@ body{
 }
 
 .logo{
-    width: 35em;
+    width: 35vw;
     margin-top: 15%;
 }
 
 button{
     background-color: transparent;
     border: 0;
+    margin-top: 4vw;
 }
 
 .start > img{
@@ -50,7 +51,7 @@ button{
 }
 .info > img{
     width: 20em;
-    margin-left: 10px;
+    margin-left: 2em;
 }
 
 .HeartIcon{
@@ -60,6 +61,27 @@ button{
 .Title_kimyeojoo{
     width: 40vw;
     float: right;
+}
+
+@media screen and (max-width: 1300px){
+
+    .Title_kimyeojoo{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .logo{
+        width: 50vw;
+    }
+
+    button{
+        width: 30em;
+    }
+
+    .info > img{
+        margin-left: 0em;
+    }
 }
 
 @media screen and (max-width: 720px){
@@ -72,7 +94,7 @@ button{
     }
 
     .logo{
-        width: 30em;
+        width: 70vw;
     }
 
     .Title_kimyeojoo,
@@ -80,24 +102,21 @@ button{
         display: none;
     }
 
-    .button{
+    button{
         flex-wrap: wrap;
         align-items: center;
-    }
-
-    .titleContainer{
-        margin-left: 0;
     }
 
 }
 @media screen and (max-width: 540px){
 
     .logo{
-        width: 30em;
+        width: 80vw;
+        margin-top: 30vw;
     }
 
-    button{
-
+    .start > img{
+        margin-top: 10vw;
     }
 
 }
