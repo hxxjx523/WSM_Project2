@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAD COOKING ENDING</title>
+    <title>BAD SPEAKER ENDING</title>
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/ending.css">
     <style>
@@ -41,7 +41,22 @@
             margin-left: 1em;
             margin-top: 1vw;
         }
-        
+        @media screen and (max-width: 720px) {
+            .image{
+                width: 40vw;
+                margin-top: 20vw;
+            }
+
+            .logo{
+                width: 45vw;
+                margin-left: -3em;
+            }
+
+            button{
+                margin-top: 7vw;
+            }
+        }
+
         @media screen and (max-width: 540px){
             .image{
                 width: 60vw;
@@ -69,7 +84,7 @@
     </style>
 </head>
 <body>
-    <div class="txt">BAD COOKING ENDING</div>
+    <div class="txt">BAD SPEAKER ENDING</div>
     <img src="images/배드 엔딩.png" alt="" class="image">
     <img src="images/logo.png" alt="" class="logo">
     <div class="button"><button id="nextButton" onclick="location.href='index.html'"><img src="images/nextButton.png" alt=" "></button></div>
