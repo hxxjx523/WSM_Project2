@@ -34,7 +34,40 @@ const dialogues = [
     { name: "", text: "장미고는 사립이면서 연예인도 많이 배출하기에 꿈의 학교로 불린다", img: "", background: "images/학교 설명 배경.png"},
     { name: "", text: "그리고 무엇보다 장미고는 미남이 많기로 유명하다!", img: "", background: "images/학교 설명 배경.png"},
     { name: "", text: "사실 내가 좋아하는 아이돌 신재현이 장미고 졸업생이다", img: "", background: "images/학교 설명 배경.png"},
-    { name: "", text: "이런 소식을 들은 중학생의 나는 작정하고 공부만 해서 들어올 수 있었다", img: "", background: "images/학교 설명 배경.png"}
+    { name: "", text: "이런 소식을 들은 중학생의 나는 작정하고 공부만 해서 들어올 수 있었다", img: "", background: "images/학교 설명 배경.png"},
+    { name: "", text: "이런저런 과거 회상에 빠져있던 나에게 누군가 다가왔다", img: "", background: "images/교실 배경.png"},
+    { name: "???", text: "야.", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },
+    { name: "", text: "아까 교문에서 만난 픽셀 인간이었다", img: "", background: "images/교실 배경.png"},
+    { name: "김여주", text: "네에...?", img: "images/김여주 표정4.png", background: "images/교실 배경.png"},
+    { name: "???", text: "다른 학교도 많은데 왜 여기로 온 거야?", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },
+    { name: "", text: "이제는 픽셀 인간한테도 시비를 당하다니 웃기다", img: "", background: "images/교실 배경.png"},
+    { name: "김여주", text: "어... 저를 아세요..?", img: "images/김여주 표정1.png", background: "images/교실 배경.png"},
+    { name: "???", text: "...뭐야? 너 나 모르는 건 아니지?", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },
+    { name: "", text: "빠르게 그의 교복에 있는 이름표를 봤다", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "이름표엔 ‘도 윤’이라고 적혀있었다", img: "", background: "images/교실 배경.png"},
+    { name: "김여주", text: "...너?", img: "images/김여주 표정4.png", background: "images/교실 배경.png"},
+    { name: "", text: "유치원때부터 함께 했지만 중학교 2학년때 갑작스럽게 그가 유학을 가버린 바람에 헤어지게 됐다", img: "", background: "images/교실 배경.png"},
+    { name: "김여주", text: "아니, 너가 도윤이라고? 언제 돌아 온 거야?", img: "images/김여주 표정4.png", background: "images/교실 배경.png"},
+    { name: "도윤", text: "이번에 왔어, 너는 이 학교에 어떻게 왔는데?", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },
+    { name: "김여주", text: "나는.. 좀 많은 일이 있었지..", img: "images/김여주 표정4.png", background: "images/교실 배경.png"},
+    { name: "", text: "(드르륵) 선생으로 보이는 사람이 들어왔다", img: "", background: "images/교실 배경.png"},
+    { name: "도윤", text: "이따 얘기해", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },
+    { name: "", text: "도윤은 자기 자리로 돌아갔다", img: "", background: "images/교실 배경.png"},
+    { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ...", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "말도 안된다 도윤이 돌아왔다니, 그리고 같은 학교, 같은 반이라니", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "왜 제가 픽셀 인간인거야? 진짜 어이없는 날이다...", img: "", background: "images/교실 배경.png"},
+];
+
+const select1_dialogues = [  
+    { name: "김여주", text: "당연히 알지", img: "images/김여주 표정7.png", background: "images/교실 배경.png"},
+    { name: "", text: "도윤은 나의 소꿉친구다", img: "", background: "images/교실 배경.png" },    
+];
+
+const select2_dialogues = [
+    { name: "김여주", text: "누구더라?", img: "images/김여주 표정2.png", background: "images/교실 배경.png"},
+    { name: "", text: "도윤은 나의 소꿉친구다", img: "", background: "images/교실 배경.png" },     
+    { name: "", text: "그를 잊는 일은 있을 수 없다", img: "", background: "images/교실 배경.png" },      
+    { name: "도윤", text: "나 도윤이잖아....", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },      
 ];
 
 let currentDialogueIndex = 0;
@@ -48,33 +81,23 @@ const nextButton = document.getElementById('nextButton');
 const nameWindow = document.querySelector('.nameWindow');
 
 
-function displayDialogue(index) {
-    if (index >= dialogues.length) {
-        nextButton.disabled = true;
-        return;
-    }
-
-    const dialogue = dialogues[index];
-    nameElement.textContent = dialogue.name;
-    // dialogueElement.textContent = dialogue.text;
-    // 만약 대화의 이름 (dialogue.name)이 빈 문자열이라면 nameWindow를 숨김
-    if (dialogue.name === "") {
-        nameWindow.style.visibility = 'hidden';
-    } else {
-        nameWindow.style.visibility = 'visible';
-    }
-
+function updateUI(dialogue) {
     dialogueElement.textContent = dialogue.text;
-    
+    nameElement.textContent = dialogue.name;
+
+    if (dialogue.name === "" && dialogue.img === "") {
+        nameWindow.style.visibility = 'hidden';
+        characterImageElement.style.visibility = 'hidden';
+    }
+
     if (dialogue.img) {
         characterImageElement.src = dialogue.img;
-        // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
         if (dialogue.img.startsWith('images/김여주')) {
             characterImageElement.style.float = 'right';
             nameWindow.style.float = 'left';
             characterImageElement.style.paddingRight = '10vh';
             isImageOnRight = true;
-        } else{
+        } else {
             characterImageElement.style.float = 'left';
             nameWindow.style.float = 'right';
             characterImageElement.style.paddingLeft = '10vh';
@@ -84,7 +107,7 @@ function displayDialogue(index) {
     } else {
         characterImageElement.style.display = 'none';
     }
-    
+
     if (dialogue.background) {
         document.body.style.backgroundImage = `url('${dialogue.background}')`;
     } else {
@@ -92,39 +115,64 @@ function displayDialogue(index) {
     }
 }
 
-function yeojooChoise(){
-    
+function displayDialogue(index) {
+    if (index >= dialogues.length) {
+        nextButton.disabled = true;
+        return;
+    }
+
+    const dialogue = dialogues[index];
+
+    if (dialogue.img && dialogue.img.startsWith('images/김여주')) {
+        isImageOnRight = true;
+    } else {
+        isImageOnRight = false;
+    }
+
+    nameWindow.style.visibility = dialogue.name === "" ? 'hidden' : 'visible';
+    characterImageElement.style.float = isImageOnRight ? 'right' : 'left';
+    nameWindow.style.float = isImageOnRight ? 'left' : 'right';
+    characterImageElement.style.paddingRight = isImageOnRight ? '10vh' : '10vh';
+
+    updateUI(dialogue);
+}
+
+function yeojooChoice(index) {
     let likability = 0;
-    const dialogue = select1_dialogues[0];
-    
+    let currentSelect1Index = 1;
+
+
+    const dialogue1 = select1_dialogues[0];
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         likability++;
         console.log(likability);
-        dialogueElement.textContent = dialogue.text;
-        if (dialogue.name === "" && dialogue.img === "") {
-            nameWindow.style.visibility = 'hidden';
-            characterImageElement.style.visibility = 'hidden';
-        }
-            
-    });
-        
-        const dialogue2 = select2_dialogues[0];
-        select2.addEventListener('click', () => {
+        updateUI(dialogue);
+        const select1NextButton = () => {
+            updateUI(select1_dialogues[currentSelect1Index]);
             selectContainer.style.display = 'none';
-            dialogueElement.textContent = dialogue2.text;
-            if (dialogue2.name === "" && dialogue2.img === "") {
-                nameWindow.style.visibility = 'hidden';
-                characterImageElement.style.visibility = 'hidden';
-            }
-        });
-    }
+            currentSelect1Index++;
+        };
+        nextButton.addEventListener('click', select1NextButton);
+        currentDialogueIndex-=1;
+    });
+    
+    const dialogue2 = select2_dialogues[0];
+    select2.addEventListener('click', () => {
+        selectContainer.style.display = 'none';
+        updateUI(dialogue2);
+        const select2NextButton = () => {
+            updateUI(select2_dialogues[currentSelect1Index]);
+            selectContainer.style.display = 'none';
+            currentSelect1Index++;
+        };
+        nextButton.addEventListener('click', select2NextButton);
+        currentDialogueIndex-=2; 
+    });
+}
     
     nextButton.addEventListener('click', () => {
         currentDialogueIndex++;
-        if(currentDialogueIndex === 12){
-            window.location.href = "DoyoonRoute2.html";
-        }
         displayDialogue(currentDialogueIndex);
         console.log(currentDialogueIndex); 
     });
