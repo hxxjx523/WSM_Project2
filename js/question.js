@@ -36,6 +36,10 @@ function displayQuestion(question) {
 }
 
     let mainBoy = "";
+
+    const setMainBoy = (value) => {
+        mainBoy = value;
+    };
         
         const choise = () => {
             let radio = document.querySelector('input[name="answer"]:checked');
@@ -70,7 +74,7 @@ function displayQuestion(question) {
             }
         }
 
-        export { mainBoy }
+        export { mainBoy, setMainBoy };
         
         document.getElementById("nextButton").addEventListener("click", choise);
         
