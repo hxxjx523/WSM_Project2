@@ -63,7 +63,7 @@ function displayQuestion(question) {
                     if (mainBoy) {
                         console.log(mainBoy); 
                         // location.href = "story1.html";
-                        // location.href = `${mainBoy}Route.html`;
+                        location.href = `${mainBoy}Route.html`;
                     }
                 }
                 radio.checked = false;
