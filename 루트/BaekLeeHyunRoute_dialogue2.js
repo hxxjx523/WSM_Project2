@@ -1,10 +1,4 @@
-const dialogues = [
-    { name: "", text: "이런저런 과거 회상에 빠져있었다", img: "", background: "images/교실 배경.png" },
-    { name: "", text: "(드르륵)", img: "", background: "images/교실 배경.png" },
-    { name: "", text: "선생으로 보이는 사람이 들어왔다", img: "", background: "images/교실 배경.png" },
-    { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ... ", img: "", background: "images/교실 배경.png" },
-    { name: "", text: "이렇게 새학기가 시작되었다", img: "", background: "images/교실 배경.png" }
-];
+
 
 let currentDialogueIndex = 0;
 let isImageVisible = true; 
@@ -65,6 +59,9 @@ function displayDialogue(index) {
 
 nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
+    if(currentDialogueIndex===6){
+        window.location.href = "BaekLeeHyunRoute3.html";
+    }
     displayDialogue(currentDialogueIndex);
     console.log(currentDialogueIndex);
 });
