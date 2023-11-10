@@ -35,12 +35,8 @@ function displayQuestion(question) {
     
 }
 
-    let mainBoy = "";
+    let mainBoy = "컹";
 
-    const setMainBoy = (value) => {
-        mainBoy = value;
-    };
-        
         const choise = () => {
             let radio = document.querySelector('input[name="answer"]:checked');
             if (radio) {
@@ -66,7 +62,7 @@ function displayQuestion(question) {
                     
                     if (mainBoy) {
                         console.log(mainBoy); 
-                        location.href = "story1.html";
+                        // location.href = "story1.html";
                         // location.href = `${mainBoy}Route.html`;
                     }
                 }
@@ -74,7 +70,7 @@ function displayQuestion(question) {
             }
         }
 
-        export { mainBoy, setMainBoy };
+        export { mainBoy };
         
         document.getElementById("nextButton").addEventListener("click", choise);
         
