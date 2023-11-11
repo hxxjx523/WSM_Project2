@@ -1,4 +1,13 @@
 const dialogues = [
+    { name: "", text: "유치원때부터 함께 했지만 중학교 2학년때 갑작스럽게 그가 유학을 가버린 바람에 헤어지게 됐다", img: "", background: "images/교실 배경.png"},
+    { name: "김여주", text: "아니, 너가 도윤이라고? 언제 돌아 온 거야?", img: "images/김여주 표정5.png", background: "images/교실 배경.png" },
+    { name: "도윤", text: "이번에 왔어, 너는 이 학교에 어떻게 왔는데?", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },
+    { name: "김여주", text: "나는.. 좀 많은 일이 있었지..", img: "images/김여주 표정5.png", background: "images/교실 배경.png" },
+    { name: "도윤", text: "이따 얘기해", img: "images/도윤 ver.1.png", background: "images/교실 배경.png" },
+    { name: "", text: "도윤은 자기 자리로 돌아갔다", img: "", background: "images/교실 배경.png"},
+    { name: "담임선생", text: "자~ 안녕하세요 저는 이번 담임을 맡은 ...", img: "", background: "images/교실 배경.png" },
+    { name: "", text: "말도 안된다 도윤이 돌아왔다니, 그리고 같은 학교, 같은 반이라니", img: "", background: "images/교실 배경.png"},
+    { name: "", text: "왜 제가 픽셀 인간인거야? 진짜 어이없는 날이다...", img: "", background: "images/교실 배경.png"},
     { name: "", text: "입학식이라 그런지 학교가 빨리 끝났다", img: "", background: "images/교실 배경.png"},
     { name: "담임선생", text: "여러분 오늘은 이만 종례하겠습니다~", img: "", background: "images/교실 배경.png" },
     { name: "김여주", text: "후..", img: "images/김여주 표정5.png", background: "images/교실 배경.png" },
@@ -132,12 +141,12 @@ function yeojooChoice(index) {
         likability++;
         console.log(likability);
         updateUI(dialogue);
-        const select1extButton = () => {
+        const select1NextButton = () => {
             updateUI(select1_dialogues[currentSelect1Index]);
             selectContainer.style.display = 'none';
             currentSelect1Index++;
         };
-        nextButton.addEventListener('click', select11NextButton);
+        nextButton.addEventListener('click', select1NextButton);
         currentSelect1Index-=1;
     });
     
@@ -145,10 +154,6 @@ function yeojooChoice(index) {
     select2.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         updateUI(dialogue2);
-        // nextButton.addEventListener('click', () => {
-            //     updateUI(select2_dialogues[currentSelect1Index]);
-            //     currentSelect1Index++;
-            // });
             const select2NextButton = () => {
                 updateUI(select2_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
@@ -165,6 +170,9 @@ function yeojooChoice(index) {
     
     nextButton.addEventListener('click', () => {
         currentDialogueIndex++;
+        if(currentDialogueIndex===dialogues.length){
+            window.location.href = "DoyoonRoute3.html";
+        }
     displayDialogue(currentDialogueIndex);
     characterImageElement.style.visibility = 'visible';
     console.log(currentDialogueIndex);
