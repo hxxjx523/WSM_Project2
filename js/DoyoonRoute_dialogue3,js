@@ -21,9 +21,19 @@ const dialogues = [
 ];
 
 const select1_dialogues = [  
+    { name: "도윤", text: "그래..? ", img: "images/도윤 ver.2.png", background: "images/남주 방 배경.png" },      
+    { name: "", text: "가볍게 식사를 마치고 집으로 갔다", img: "", background: "images/남주 방 배경.png" },
+    { name: "", text: "도윤의 얼굴은 끝까지 찡그리고 있었다", img: "", background: "images/남주 방 배경.png" },
+    { name: "", text: "그렇게 독설가가 되었다", img: "", background: "images/남주 방 배경.png" },
 ];
 
 const select2_dialogues = [
+    { name: "도윤", text: "다행이다!", img: "images/도윤 ver.2.png", background: "images/남주 방 배경.png" },      
+    { name: "", text: "그렇게 도윤과 식사를 마쳤다", img: "", background: "images/남주 방 배경.png" },
+    { name: "도윤", text: "데려다줄게", img: "images/도윤 ver.2.png", background: "images/남주 방 배경.png" },      
+    { name: "", text: "도윤은 나를 집까지 데려다줬다", img: "", background: "images/남주 방 배경.png" },
+    { name: "도윤", text: "내일 봐", img: "images/도윤 ver.2.png", background: "images/남주 방 배경.png" },      
+    { name: "김여주", text: "응, 내일 봐", img: "images/김여주 전신.png", background: "images/남주 방 배경.png"},
 ];
 
 let currentDialogueIndex = 0;
