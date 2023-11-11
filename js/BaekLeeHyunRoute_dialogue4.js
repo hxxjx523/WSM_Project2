@@ -143,34 +143,51 @@ function yeojooChoice(index) {
     let likability = 0;
     let currentSelect1Index = 1;
 
-    const dialogue = select1_dialogues[0];
+    function navigateToGoodEnding() {
+        window.location.href = "BaekLeeHyunGoodEnding.html";
+    }
+
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         likability++;
         console.log(likability);
-        updateUI(dialogue);
-            const select1NextButton = () => {
+        updateUI(select1_dialogues[0]);
+    
+        const select1NextButton = () => {
+            if (currentSelect1Index === select1_dialogues.length ) {
+                navigateToGoodEnding();
+            } else {
                 updateUI(select1_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
                 currentSelect1Index++;
-            };
-            nextButton.addEventListener('click', select1NextButton);
-            // currentDialogueIndex-=1;
+            }
+        };
+    
+        nextButton.addEventListener('click', select1NextButton);
     });
     
-    const dialogue2 = select2_dialogues[0];
+    function ToEnding() {
+        window.location.href = "GoodStudentCouncilEnding.html";
+    }
+    
     select2.addEventListener('click', () => {
         selectContainer.style.display = 'none';
-        updateUI(dialogue2);
-            const select2NextButton = () => {
+        updateUI(select2_dialogues[0]);
+        
+        const select2NextButton = () => {
+            if (currentSelect1Index === select2_dialogues.length-1) {
+                ToEnding();
+            } else {
                 updateUI(select2_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
                 currentSelect1Index++;
-            };
-            nextButton.addEventListener('click', select2NextButton);
-            currentDialogueIndex-=2; 
-        });
-    }
+            }
+        };
+        
+        nextButton.addEventListener('click', select2NextButton);
+        currentDialogueIndex -= 2;
+    });
+}
     
     //////////////////////////////////////////////////////////////
     

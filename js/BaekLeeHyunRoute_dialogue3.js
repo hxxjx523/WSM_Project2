@@ -137,19 +137,28 @@ function yeojooChoice(index) {
             currentDialogueIndex-=1;
     });
     
-    const dialogue2 = select2_dialogues[0];
+    function ToEnding() {
+        window.location.href = "WaitingEnding.html";
+    }
+    
     select2.addEventListener('click', () => {
         selectContainer.style.display = 'none';
-        updateUI(dialogue2);
-            const select2NextButton = () => {
+        updateUI(select2_dialogues[0]);
+        
+        const select2NextButton = () => {
+            if (currentSelect1Index === select2_dialogues.length) {
+                ToEnding();
+            } else {
                 updateUI(select2_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
                 currentSelect1Index++;
-            };
-            nextButton.addEventListener('click', select2NextButton);
-            currentDialogueIndex-=2; 
-        });
-    }
+            }
+        };
+        
+        nextButton.addEventListener('click', select2NextButton);
+        currentDialogueIndex -= 2;
+    });
+}
     
     //////////////////////////////////////////////////////////////
     
