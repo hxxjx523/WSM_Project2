@@ -128,10 +128,14 @@ function yeojooChoice(index) {
             updateUI(select1_dialogues[currentSelect1Index]);
             selectContainer.style.display = 'none';
             currentSelect1Index++;
+            
+            if (currentSelect1Index === select1_dialogues.length) {
+                window.location.href = "BaekLeeHyunRoute2.html";
+            }
         };
         nextButton.addEventListener('click', select1NextButton);
-        window.location.href = "BaekLeeHyunRoute2.html";
     });
+
     
     const dialogue2 = select2_dialogues[0];
     select2.addEventListener('click', () => {
