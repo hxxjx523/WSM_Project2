@@ -52,9 +52,9 @@ const select1_dialogues = [
 const select2_dialogues = [
     { name: "", text: "덜컥",img: "", background: "images/남주 방 배경.png"},
     { name: "", text: "책을 들고 있는 나와 최재율이 눈이 마주쳤다", img: "",background: "images/남주 방 배경.png"},
-    { name: "최재율", text: "지금 뭐하는 거야?", img: "images/최재율 표정1.png", background: "images/남주 방 배경.png"},
+    { name: "최재율", text: "지금 뭐하는 거야?", img: "images/최재율 ver.2.png", background: "images/남주 방 배경.png"},
     { name: "김여주", text: "아니 그게..", img: "images/김여주 표정5.png", background: "images/남주 방 배경.png"},
-    { name: "최재율", text: "... 나가", img: "images/최재율 표정1.png", background: "images/남주 방 배경.png"},
+    { name: "최재율", text: "... 나가", img: "images/최재율 ver.2.png", background: "images/남주 방 배경.png"},
     { name: "김여주", text: "..어?", img: "images/김여주 표정5.png", background: "images/남주 방 배경.png"},
     { name: "", text: "그렇게 난 최악의 손님이 됐다", img: "",background: "images/남주 방 배경.png"},
 
@@ -149,18 +149,26 @@ function displayDialogue(index) {
             nextButton.addEventListener('click', select1NextButton);
     });
 
+    function ToEnding() {
+        window.location.href = "TheWorstEnding.html";
+    }
     
-    const dialogue2 = select2_dialogues[0];
     select2.addEventListener('click', () => {
         selectContainer.style.display = 'none';
-        updateUI(dialogue2);
+        updateUI(select2_dialogues[0]);
+        
         const select2NextButton = () => {
-            updateUI(select2_dialogues[currentSelect1Index]);
-            selectContainer.style.display = 'none';
-            currentSelect1Index++;
+            if (currentSelect1Index === select2_dialogues.length-1) {
+                ToEnding();
+            } else {
+                updateUI(select2_dialogues[currentSelect1Index]);
+                selectContainer.style.display = 'none';
+                currentSelect1Index++;
+            }
         };
+        
         nextButton.addEventListener('click', select2NextButton);
-        currentDialogueIndex-=2; 
+        currentDialogueIndex -= 2;
     });
 }
     nextButton.addEventListener('click', () => {

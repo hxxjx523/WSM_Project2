@@ -154,9 +154,13 @@ function displayDialogue(index) {
             selectContainer.style.display = 'none';
             updateUI(dialogue);
             const select1NextButton = () => {
-                updateUI(select1_dialogues[currentSelect1Index]);
-                selectContainer.style.display = 'none';
-                currentSelect1Index++;
+                if (currentSelect1Index === select1_dialogues.length - 1) {
+                    window.location.href = "BoringPersonEnding.html";
+                } else {
+                    updateUI(select1_dialogues[currentSelect1Index]);
+                    selectContainer.style.display = 'none';
+                    currentSelect1Index++;
+                }
             };
             nextButton.addEventListener('click', select1NextButton);
         });
