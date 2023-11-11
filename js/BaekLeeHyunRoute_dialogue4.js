@@ -143,7 +143,7 @@ function yeojooChoice(index) {
     let likability = 0;
     let currentSelect1Index = 1;
 
-    function navigateToGoodEnding() {
+    function ToEnding1() {
         window.location.href = "BaekLeeHyunGoodEnding.html";
     }
 
@@ -155,7 +155,7 @@ function yeojooChoice(index) {
     
         const select1NextButton = () => {
             if (currentSelect1Index === select1_dialogues.length ) {
-                navigateToGoodEnding();
+                ToEnding1();
             } else {
                 updateUI(select1_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
