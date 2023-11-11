@@ -72,33 +72,25 @@ const selectContainer = document.querySelector('.selectContainer');
 const select1 = document.querySelector('.select1');
 const select2 = document.querySelector('.select2');
 
-function displayDialogue(index) {
-    if (index >= dialogues.length) {
-        nextButton.disabled = true;
-        return;
-    }
-
-    const dialogue = dialogues[index];
-    nameElement.textContent = dialogue.name;
-    // dialogueElement.textContent = dialogue.text;
-    // 만약 대화의 이름 (dialogue.name)이 빈 문자열이라면 nameWindow를 숨김
-    if (dialogue.name === "") {
-        nameWindow.style.visibility = 'hidden';
-    } else {
-        nameWindow.style.visibility = 'visible';
-    }
-
+function updateUI(dialogue) {
+    
     dialogueElement.textContent = dialogue.text;
+    nameElement.textContent = dialogue.name;
+    nameWindow.style.visibility = 'vislble';
+    
+    if (dialogue.name === "" && dialogue.img === "") {
+        nameWindow.style.visibility = 'hidden';
+        characterImageElement.style.visibility = 'hidden';
+    }
     
     if (dialogue.img) {
         characterImageElement.src = dialogue.img;
-        // 이미지 주소가 특정 값일 때만 이미지 위치를 변경
         if (dialogue.img.startsWith('images/김여주')) {
             characterImageElement.style.float = 'right';
             nameWindow.style.float = 'left';
             characterImageElement.style.paddingRight = '10vh';
             isImageOnRight = true;
-        } else{
+        } else {
             characterImageElement.style.float = 'left';
             nameWindow.style.float = 'right';
             characterImageElement.style.paddingLeft = '10vh';
@@ -116,9 +108,32 @@ function displayDialogue(index) {
     }
 }
 
+function displayDialogue(index) {
+    // if (index >= dialogues.length) {
+        //     nextButton.disabled = true;
+        //     return;
+        // }
+        
+        const dialogue = dialogues[index];
+        
+        if (dialogue.img && dialogue.img.startsWith('images/김여주')) {
+            isImageOnRight = true;
+        } else {
+            isImageOnRight = false;
+        }
+        
+        nameWindow.style.visibility = dialogue.name === "" ? 'hidden' : 'visible';
+        characterImageElement.style.float = isImageOnRight ? 'right' : 'left';
+        nameWindow.style.float = isImageOnRight ? 'left' : 'right';
+        characterImageElement.style.paddingRight = isImageOnRight ? '10vh' : '10vh';
+        
+        updateUI(dialogue);
+    }
+
 nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
-    if(currentDialogueIndex===58){
+    characterImageElement.style.visibility = 'visible';
+    if(currentDialogueIndex===dialogues.length){
         window.location.href = "ChoijaeyulRute3.html";
     }
     displayDialogue(currentDialogueIndex);

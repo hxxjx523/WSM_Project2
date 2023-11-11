@@ -92,6 +92,7 @@ function updateUI(dialogue) {
     
     dialogueElement.textContent = dialogue.text;
     nameElement.textContent = dialogue.name;
+    nameWindow.style.visibility = 'vislble';
     
     if (dialogue.name === "" && dialogue.img === "") {
         nameWindow.style.visibility = 'hidden';
@@ -165,6 +166,9 @@ function displayDialogue(index) {
             selectContainer.style.display = 'none';
             updateUI(dialogue2);
             const select2NextButton = () => {
+                if(currentSelect1Index===select2_dialogues.length){
+                    window.location.href = "ChoijaeyulRute2.html";
+                }
                 updateUI(select2_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
                 currentSelect1Index++;
@@ -177,12 +181,12 @@ function displayDialogue(index) {
     nextButton.addEventListener('click', () => {
         currentDialogueIndex++;
         characterImageElement.style.visibility = 'visible';
-        if(currentDialogueIndex===48){
+        if(currentDialogueIndex===dialogues.length){
             selectContainer.style.display = 'flex';
             yeojooChoice();
         }
-        // nameWindow.style.visibility = 'vislble';
-    displayDialogue(currentDialogueIndex);
+        nameWindow.style.visibility = 'vislble';
+        displayDialogue(currentDialogueIndex);
     console.log(currentDialogueIndex)
 });
 
