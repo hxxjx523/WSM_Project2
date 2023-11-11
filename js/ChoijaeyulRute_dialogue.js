@@ -92,7 +92,7 @@ function updateUI(dialogue) {
     
     dialogueElement.textContent = dialogue.text;
     nameElement.textContent = dialogue.name;
-    nameWindow.style.visibility = 'vislble';
+    nameWindow.style.visibility = 'visible';
     
     if (dialogue.name === "" && dialogue.img === "") {
         nameWindow.style.visibility = 'hidden';
@@ -188,10 +188,9 @@ function displayDialogue(index) {
         if(currentDialogueIndex===dialogues.length){
             selectContainer.style.display = 'flex';
             yeojooChoice();
-        }
-        nameWindow.style.visibility = 'vislble';
+        }   
         displayDialogue(currentDialogueIndex);
-    console.log(currentDialogueIndex)
+        console.log(currentDialogueIndex)
 });
 
 window.addEventListener('DOMContentLoaded', () => {

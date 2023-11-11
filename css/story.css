@@ -131,7 +131,7 @@ img{
     }
 
     .character{
-        max-height: 90vw;
+        max-height: 80vw;
         overflow: hidden;
         margin-bottom: -120px;
         position: relative;
@@ -165,13 +165,45 @@ img{
 
 
 @media screen and (max-width: 540px){
-    .imgCharacter{
+    
+    .dialogueWindow{
+        font-size: 1.3rem;
         width: 90vw;
-        padding-left: 10vw;
+        height: 10em;
+        margin: auto 5%;
+        position: relative;
+        z-index: 2;
+        flex-direction: column;
     }
 
     .character{
-        max-height: 120vw;
+        max-height: 90vw;
     }
+
+    .nameWindow{
+        font-size: 1.3rem;
+        background-color: aliceblue;
+        margin: auto 5%;
+        width: 170px;
+        height: 2em;
+        position: relative;
+        z-index: 3;
+    }
+
+    .select1, .select2{
+        width: 200px;
+        height: 2.5em;
+        position: relative;
+        margin-top: 0.8em;
+        z-index: 3;
+    }
+
+    .selectContainer{
+        display: flex;
+        margin-top: 5vh;
+        gap: 5vh;
+        display: none;
+    }
+    
 
 }
