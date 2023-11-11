@@ -165,13 +165,6 @@ function yeojooChoice(index) {
     
     nextButton.addEventListener('click', () => {
         currentDialogueIndex++;
-        if(currentDialogueIndex === 13){
-            selectContainer.style.display = 'flex';
-            yeojooChoice(currentDialogueIndex);
-        }
-    if(currentDialogueIndex===23){
-        window.location.href = "BaekLeeHyunRoute2.html";
-    }
     displayDialogue(currentDialogueIndex);
     characterImageElement.style.visibility = 'visible';
     console.log(currentDialogueIndex);

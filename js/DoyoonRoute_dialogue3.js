@@ -45,11 +45,14 @@ const dialogueElement = document.querySelector('.dialogue');
 const characterImageElement = document.querySelector('.imgCharacter');
 const nextButton = document.getElementById('nextButton');
 const nameWindow = document.querySelector('.nameWindow');
-
+const selectContainer = document.querySelector('.selectContainer');
+const select1 = document.querySelector('.select1');
+const select2 = document.querySelector('.select2');
 
 function updateUI(dialogue) {
     dialogueElement.textContent = dialogue.text;
     nameElement.textContent = dialogue.name;
+    nameWindow.style.visibility = 'visible';
 
     if (dialogue.name === "" && dialogue.img === "") {
         nameWindow.style.visibility = 'hidden';
@@ -82,10 +85,10 @@ function updateUI(dialogue) {
 }
 
 function displayDialogue(index) {
-    if (index >= dialogues.length) {
-        nextButton.disabled = true;
-        return;
-    }
+    // if (index >= dialogues.length) {
+    //     nextButton.disabled = true;
+    //     return;
+    // }
 
     const dialogue = dialogues[index];
 
@@ -108,7 +111,7 @@ function yeojooChoice(index) {
     let currentSelect1Index = 1;
 
 
-    const dialogue1 = select1_dialogues[0];
+    const dialogue = select1_dialogues[0];
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         likability++;
@@ -128,6 +131,9 @@ function yeojooChoice(index) {
         selectContainer.style.display = 'none';
         updateUI(dialogue2);
         const select2NextButton = () => {
+            if(currentSelect1Index===select1_dialogues.length){
+                window.location.href = "DoyoonRoute4.html";
+            }
             updateUI(select2_dialogues[currentSelect1Index]);
             selectContainer.style.display = 'none';
             currentSelect1Index++;
@@ -139,6 +145,11 @@ function yeojooChoice(index) {
     
     nextButton.addEventListener('click', () => {
         currentDialogueIndex++;
+        characterImageElement.style.visibility = 'visible';
+        if(currentDialogueIndex === 19){
+            selectContainer.style.display = 'flex';
+            yeojooChoice(currentDialogueIndex);
+        }
         displayDialogue(currentDialogueIndex);
         console.log(currentDialogueIndex); 
     });
