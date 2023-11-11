@@ -45,6 +45,14 @@ const select1_dialogues = [
 ];
 
 const select2_dialogues = [
+    { name: "", text: "덜컥", background: "images/남주 방 배경.png"},
+    { name: "", text: "책을 들고 있는 나와 최재율이 눈이 마주쳤다", background: "images/남주 방 배경.png"},
+    { name: "최재율", text: "지금 뭐하는 거야?", img: "images/최재율 표정1.png", background: "images/남주 방 배경.png"},
+    { name: "김여주", text: "아니 그게..", img: "images/김여주 표정5.png", background: "images/남주 방 배경.png"},
+    { name: "최재율", text: "... 나가", img: "images/최재율 표정1.png", background: "images/남주 방 배경.png"},
+    { name: "김여주", text: "..어?", img: "images/김여주 표정5.png", background: "images/남주 방 배경.png"},
+    { name: "", text: "그렇게 난 최악의 손님이 됐다", background: "images/남주 방 배경.png"},
+
 ];
 let currentDialogueIndex = 0;
 let isImageVisible = true; 
