@@ -111,19 +111,27 @@ function yeojooChoice(index) {
     let currentSelect1Index = 1;
 
 
-    const dialogue = select1_dialogues[0];
+    function ToEnding1() {
+        window.location.href = "BadCookingEnding.html";
+    }
+
     select1.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         likability++;
         console.log(likability);
-        updateUI(dialogue);
+        updateUI(select1_dialogues[0]);
+    
         const select1NextButton = () => {
-            updateUI(select1_dialogues[currentSelect1Index]);
-            selectContainer.style.display = 'none';
-            currentSelect1Index++;
+            if (currentSelect1Index === select1_dialogues.length ) {
+                ToEnding1();
+            } else {
+                updateUI(select1_dialogues[currentSelect1Index]);
+                selectContainer.style.display = 'none';
+                currentSelect1Index++;
+            }
         };
+    
         nextButton.addEventListener('click', select1NextButton);
-        currentDialogueIndex-=1;
     });
     
     const dialogue2 = select2_dialogues[0];
