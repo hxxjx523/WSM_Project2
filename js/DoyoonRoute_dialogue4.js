@@ -1,18 +1,30 @@
 const dialogues = [
     { name: "", text: "익숙한 뒷모습이야!", img: "", background: "images/등굣길 배경.png" },
-    { name: "김여주", text: "윤아!", img: "images/김여주 전신.png", background: "images/남주 방 배경.png"},
+    { name: "김여주", text: "윤아!", img: "images/김여주 전신.png", background: "images/등굣길 배경.png"},
     { name: "", text: "윤이를 만났다", img: "", background: "images/등굣길 배경.png" },
     { name: "", text: "윤이의 모습은...", img: "", background: "images/등굣길 배경.png" },
-    { name: "도윤", text: "어제 잘 들어갔어?", img: "images/됴윤 표정1.png", background: "images/남주 방 배경.png"},
+    { name: "도윤", text: "어제 잘 들어갔어?", img: "images/됴윤 표정1.png", background: "images/등굣길 배경.png"},
     { name: "", text: "내가 아는 모습으로 돌아왔다", img: "", background: "images/등굣길 배경.png" },
-    { name: "김여주", text: "응, 덕분에~", img: "images/김여주 표정7.png", background: "images/남주 방 배경.png"},
+    { name: "김여주", text: "응, 덕분에~", img: "images/김여주 표정7.png", background: "images/등굣길 배경.png"},
     { name: "", text: "오랜만에 본 진짜 윤이의 모습에 빤히 쳐다봤다", img: "", background: "images/등굣길 배경.png" },
+    { name: "도윤", text: "뭐야.. 왜 그렇게 쳐다보는데..", img: "images/됴윤 표정4.png", background: "images/등굣길 배경.png"},
+    { name: "김여주", text: "하하, 부끄러워하는 거야?", img: "images/김여주 표정8.png", background: "images/등굣길 배경.png"},
+    { name: "도윤", text: "...여주야, 나 어떻게 생각해?", img: "images/됴윤 표정4.png", background: "images/등굣길 배경.png"},
+    { name: "", text: "어..?어?! 잠깐", img: "", background: "images/등굣길 배경.png" },
+    { name: "김여주", text: "응? 너..?", img: "images/김여주 표정12.png", background: "images/등굣길 배경.png"},
 ];
 
 const select1_dialogues = [  
+    { name: "도윤", text: "...그래 그러자", img: "images/됴윤 전신.png", background: "images/등굣길 배경.png"},
+    { name: "김여주", text: "그래!", img: "images/김여주 전신.png", background: "images/등굣길 배경.png"},
+    { name: "", text: "그렇게 도윤과 베프가 됐다", img: "", background: "images/등굣길 배경.png" },
 ];
 
 const select2_dialogues = [
+    { name: "도윤", text: "그거 긍정적인 의미로 봐도 되겠지?", img: "images/됴윤 표정4.png", background: "images/등굣길 배경.png"},
+    { name: "김여주", text: "..응!", img: "images/김여주 표정12.png", background: "images/등굣길 배경.png"},
+    { name: "김여주", text: "..빨리 반에 가자//", img: "images/김여주 표정12.png", background: "images/등굣길 배경.png"},
+    { name: "", text: "렇게 윤이와는 좋은 방향으로 발전해나갔고 자연스럽게 입학 첫날의 기억은 잊혀졌다 ", img: "", background: "images/등굣길 배경.png" },
 ];
 
 let currentDialogueIndex = 0;
