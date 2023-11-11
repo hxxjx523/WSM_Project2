@@ -139,19 +139,17 @@ function displayDialogue(index) {
     });
 
     
-    function navigateToWaryEnding() {
+    function ToEnding() {
         window.location.href = "WaryEnding.html";
     }
     
-    // select2 이벤트 리스너 수정
     select2.addEventListener('click', () => {
         selectContainer.style.display = 'none';
         updateUI(select2_dialogues[0]);
         
         const select2NextButton = () => {
             if (currentSelect1Index === select2_dialogues.length) {
-                // select2_dialogues의 마지막 대화일 때 WaryEnding.html로 이동
-                navigateToWaryEnding();
+                ToEnding();
             } else {
                 updateUI(select2_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
