@@ -64,7 +64,8 @@ function updateUI(dialogue) {
     
     dialogueElement.textContent = dialogue.text;
     nameElement.textContent = dialogue.name;
-
+    nameWindow.style.visibility = 'visible';
+    
     if (dialogue.name === "" && dialogue.img === "") {
         nameWindow.style.visibility = 'hidden';
         characterImageElement.style.visibility = 'hidden';
@@ -87,7 +88,7 @@ function updateUI(dialogue) {
     } else {
         characterImageElement.style.display = 'none';
     }
-
+    
     if (dialogue.background) {
         document.body.style.backgroundImage = `url('${dialogue.background}')`;
     } else {
@@ -96,44 +97,44 @@ function updateUI(dialogue) {
 }
 
 function displayDialogue(index) {
-    if (index >= dialogues.length) {
-        nextButton.disabled = true;
-        return;
-    }
-
-    const dialogue = dialogues[index];
-
-    if (dialogue.img && dialogue.img.startsWith('images/김여주')) {
-        isImageOnRight = true;
-    } else {
-        isImageOnRight = false;
-    }
-
-    nameWindow.style.visibility = dialogue.name === "" ? 'hidden' : 'visible';
-    characterImageElement.style.float = isImageOnRight ? 'right' : 'left';
-    nameWindow.style.float = isImageOnRight ? 'left' : 'right';
-    characterImageElement.style.paddingRight = isImageOnRight ? '10vh' : '10vh';
-
-    updateUI(dialogue);
-}
-
-function yeojooChoice(index) {
-    let currentSelect1Index = 1;
-
-    const dialogue = select1_dialogues[0];
-    select1.addEventListener('click', () => {
-        selectContainer.style.display = 'none';
+    // if (index >= dialogues.length) {
+        //     nextButton.disabled = true;
+        //     return;
+        // }
+        
+        const dialogue = dialogues[index];
+        
+        if (dialogue.img && dialogue.img.startsWith('images/김여주')) {
+            isImageOnRight = true;
+        } else {
+            isImageOnRight = false;
+        }
+        
+        nameWindow.style.visibility = dialogue.name === "" ? 'hidden' : 'visible';
+        characterImageElement.style.float = isImageOnRight ? 'right' : 'left';
+        nameWindow.style.float = isImageOnRight ? 'left' : 'right';
+        characterImageElement.style.paddingRight = isImageOnRight ? '10vh' : '10vh';
+        
         updateUI(dialogue);
-        const select1NextButton = () => {
-            updateUI(select1_dialogues[currentSelect1Index]);
+    }
+    
+    function yeojooChoice(index) {
+        let currentSelect1Index = 1;
+        
+        const dialogue = select1_dialogues[0];
+        select1.addEventListener('click', () => {
             selectContainer.style.display = 'none';
-            currentSelect1Index++;
-            
-            if (currentSelect1Index === select1_dialogues.length) {
-                window.location.href = "BaekLeeHyunRoute2.html";
-            }
-        };
-        nextButton.addEventListener('click', select1NextButton);
+            updateUI(dialogue);
+            const select1NextButton = () => {
+                if(currentSelect1Index===select1_dialogues.length){
+                    window.location.href = "BaekLeeHyunRoute2.html";
+                }
+                updateUI(select1_dialogues[currentSelect1Index]);
+                selectContainer.style.display = 'none';
+                currentSelect1Index++;
+                console.log(currentSelect1Index);
+            };
+            nextButton.addEventListener('click', select1NextButton);
     });
 
     
@@ -155,7 +156,7 @@ function yeojooChoice(index) {
 nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
     characterImageElement.style.visibility = 'visible';
-    if(currentDialogueIndex === 30){
+    if(currentDialogueIndex === dialogues.length){
         selectContainer.style.display = 'flex';
         yeojooChoice(currentDialogueIndex);
     }

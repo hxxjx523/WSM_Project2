@@ -126,6 +126,9 @@ function yeojooChoice(index) {
         console.log(likability);
         updateUI(dialogue);
             const select1NextButton = () => {
+                if(currentSelect1Index===select1_dialogues.length){
+                    window.location.href = "BaekLeeHyunRoute4.html";
+                }
                 updateUI(select1_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
                 currentSelect1Index++;
