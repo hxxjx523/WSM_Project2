@@ -55,9 +55,9 @@ function displayQuestion(question) {
                     if (accumulatedValue >= 3 && accumulatedValue <= 4) {
                         mainBoy = "DoYoon";
                     } else if (accumulatedValue >= 5 && accumulatedValue <= 7) {
-                        mainBoy = "Baekleehyun";
+                        mainBoy = "BaekLeeHyun";
                     } else if (accumulatedValue >= 8 && accumulatedValue <= 9) {
-                        mainBoy = "choijeayul";
+                        mainBoy = "Choijaeyul";
                     }
                     
                     if (mainBoy) {
