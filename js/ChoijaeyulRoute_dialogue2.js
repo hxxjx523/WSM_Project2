@@ -134,7 +134,7 @@ nextButton.addEventListener('click', () => {
     currentDialogueIndex++;
     characterImageElement.style.visibility = 'visible';
     if(currentDialogueIndex===dialogues.length){
-        window.location.href = "ChoijaeyulRute3.html";
+        window.location.href = "ChoijaeyulRoute3.html";
     }
     displayDialogue(currentDialogueIndex);
     console.log(currentDialogueIndex);

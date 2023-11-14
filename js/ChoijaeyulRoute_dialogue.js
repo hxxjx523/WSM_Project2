@@ -171,7 +171,7 @@ function displayDialogue(index) {
             updateUI(dialogue2);
             const select2NextButton = () => {
                 if(currentSelect1Index===select2_dialogues.length){
-                    window.location.href = "ChoijaeyulRute2.html";
+                    window.location.href = "ChoijaeyulRoute2.html";
                 }
                 updateUI(select2_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';

@@ -139,7 +139,7 @@ function displayDialogue(index) {
             updateUI(dialogue);
             const select1NextButton = () => {
                 if(currentSelect1Index===select1_dialogues.length){
-                    window.location.href = "ChoijaeyulRute4.html";
+                    window.location.href = "ChoijaeyulRoute4.html";
                 }
                 updateUI(select1_dialogues[currentSelect1Index]);
                 selectContainer.style.display = 'none';
